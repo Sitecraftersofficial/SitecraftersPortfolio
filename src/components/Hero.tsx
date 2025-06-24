@@ -96,6 +96,11 @@ const Hero = () => {
         <Logo3D />
 
 <div className="mb-7 md:mb-8 flex justify-center space-x-4 md:space-x-8">
+  <a href="https://wa.me/250789599719" target="_blank" rel="noopener noreferrer">
+    <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+      <img src={whatsappicon} alt="whatsapp" className="w-[38px] h-[38px] object-contain" />
+    </div>
+  </a>
   <a href="https://www.instagram.com/sitecraftersz/" target="_blank" rel="noopener noreferrer">
     <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
       <img src={instagramicon} alt="instagram" className="w-[40px] h-[40px] object-contain" />
@@ -106,19 +111,14 @@ const Hero = () => {
       <img src={facebookicon} alt="facebook" className="w-[35px] h-[35px] object-contain" />
     </div>
   </a>
-  <a href="https://www.linkedin.com/in/site-crafters-a6b199371/" target="_blank" rel="noopener noreferrer">
-    <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
-      <img src={linkedinicon} alt="linkedin" className="w-[40px] h-[40px] object-contain" />
-    </div>
-  </a>
-  <a href="https://wa.me/250789599719" target="_blank" rel="noopener noreferrer">
-    <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
-      <img src={whatsappicon} alt="whatsapp" className="w-[38px] h-[38px] object-contain" />
-    </div>
-  </a>
   <a href="mailto:sitecraftersz@gmail.com" target="_blank" rel="noopener noreferrer">
     <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
       <img src={gmailicon} alt="gmail" className="w-[40px] h-[40px] object-contain" />
+    </div>
+  </a>
+  <a href="https://www.linkedin.com/in/site-crafters-a6b199371/" target="_blank" rel="noopener noreferrer">
+    <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+      <img src={linkedinicon} alt="linkedin" className="w-[40px] h-[40px] object-contain" />
     </div>
   </a>
 </div>

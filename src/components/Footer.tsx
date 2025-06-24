@@ -1,5 +1,10 @@
 
-import { Github, Twitter, Linkedin, Mail } from "lucide-react";
+import instagramicon from '../assets/socialmedia/instagram.png';
+import facebookicon from '../assets/socialmedia/facebook.png';
+import gmailicon from '../assets/socialmedia/gmail.png';
+import linkedinicon from '../assets/socialmedia/linkedin.png';
+import whatsappicon from '../assets/socialmedia/whatsapp.png';
+import githubicon from '../assets/socialmedia/github.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -22,33 +27,35 @@ const Footer = () => {
               We craft exceptional digital experiences that help businesses grow and succeed online.
             </p>
             <div className="flex space-x-4">
-              <a
-                href="#"
-                className="bg-slate-800 hover:bg-slate-700 p-2 rounded-lg transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="w-5 h-5 text-slate-400 hover:text-white" />
+              <a href="https://wa.me/250789599719" target="_blank" rel="noopener noreferrer">
+                <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+                  <img src={whatsappicon} alt="whatsapp" className="w-[28px] h-[28px] object-contain" />
+                </div>
               </a>
-              <a
-                href="#"
-                className="bg-slate-800 hover:bg-slate-700 p-2 rounded-lg transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5 text-slate-400 hover:text-white" />
+              <a href="https://www.instagram.com/sitecraftersz/" target="_blank" rel="noopener noreferrer">
+                <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+                  <img src={instagramicon} alt="instagram" className="w-[30px] h-[30px] object-contain" />
+                </div>
               </a>
-              <a
-                href="#"
-                className="bg-slate-800 hover:bg-slate-700 p-2 rounded-lg transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5 text-slate-400 hover:text-white" />
+              <a href="https://www.facebook.com/share/1BhjrkKef6/" target="_blank" rel="noopener noreferrer">
+                <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+                  <img src={facebookicon} alt="facebook" className="w-[25px] h-[25px] object-contain" />
+                </div>
               </a>
-              <a
-                href="#"
-                className="bg-slate-800 hover:bg-slate-700 p-2 rounded-lg transition-colors"
-                aria-label="Email"
-              >
-                <Mail className="w-5 h-5 text-slate-400 hover:text-white" />
+              <a href="mailto:sitecraftersz@gmail.com" target="_blank" rel="noopener noreferrer">
+                <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+                  <img src={gmailicon} alt="gmail" className="w-[30px] h-[30px] object-contain" />
+                </div>
+              </a>
+              <a href="https://github.com/Sitecraftersofficial" target="_blank" rel="noopener noreferrer">
+                <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+                  <img src={githubicon} alt="github" className="w-[30px] h-[30px] object-contain" />
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/site-crafters-a6b199371/" target="_blank" rel="noopener noreferrer">
+                <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+                  <img src={linkedinicon} alt="linkedin" className="w-[30px] h-[30px] object-contain" />
+                </div>
               </a>
             </div>
           </div>
@@ -96,9 +103,9 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Contact</h3>
             <ul className="space-y-2 text-slate-300">
-              <li>hello@sitecrafters.com</li>
-              <li>+1 (555) 123-4567</li>
-              <li>San Francisco, CA</li>
+              <li><a href="mailto:sitecraftersz@gmail.com" className="text-slate-300">sitecraftersz@gmail.com</a></li>
+              <li><a href="tel:250789599719" className="text-slate-300">(+250) 789-599-719</a></li>
+              <li>Kigali, Rwanda</li>
             </ul>
           </div>
         </div>
