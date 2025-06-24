@@ -1,5 +1,5 @@
 
-import { Code, Palette, Smartphone, Search, ShoppingCart, BarChart } from "lucide-react";
+import { Code, Palette, Search, ShoppingCart, Settings, BarChart } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Services = () => {
@@ -17,10 +17,10 @@ const Services = () => {
       features: ["User Research", "Wireframing", "Prototyping", "Design Systems"]
     },
     {
-      icon: Smartphone,
-      title: "Mobile Development",
-      description: "Native and cross-platform mobile applications for iOS and Android devices.",
-      features: ["React Native", "Native iOS/Android", "App Store Optimization", "Push Notifications"]
+      icon: Settings,
+      title: "Web Maintenance",
+      description: "Ongoing support and maintenance to keep your website secure, updated, and performing optimally.",
+      features: ["Security Updates", "Performance Monitoring", "Content Updates", "Bug Fixes"]
     },
     {
       icon: Search,
@@ -36,9 +36,9 @@ const Services = () => {
     },
     {
       icon: BarChart,
-      title: "Digital Marketing",
-      description: "Comprehensive digital marketing strategies to grow your online presence.",
-      features: ["Social Media", "Content Marketing", "PPC Campaigns", "Analytics"]
+      title: "Analytics & Insights",
+      description: "Data-driven insights to understand your audience and optimize your digital presence.",
+      features: ["Google Analytics", "Performance Tracking", "User Behavior", "Conversion Optimization"]
     }
   ];
 

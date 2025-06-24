@@ -2,6 +2,7 @@
 import { ArrowRight, Code, Palette, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import Logo3D from "./Logo3D";
 
 const Hero = () => {
   const [currentText, setCurrentText] = useState(0);
@@ -22,6 +23,9 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-4">
       <div className="container mx-auto text-center">
+        {/* 3D Logo */}
+        <Logo3D />
+        
         <div className="mb-8 flex justify-center space-x-8 text-slate-400">
           <Code className="w-8 h-8 animate-pulse" />
           <Palette className="w-8 h-8 animate-pulse delay-200" />
@@ -45,7 +49,7 @@ const Hero = () => {
           <Button 
             onClick={scrollToContact}
             size="lg" 
-            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-lg px-8 py-3 group"
+            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-lg px-8 py-3 group text-white border-0"
           >
             Start Your Project
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -53,7 +57,7 @@ const Hero = () => {
           <Button 
             variant="outline" 
             size="lg" 
-            className="border-slate-600 text-white hover:bg-slate-800 text-lg px-8 py-3"
+            className="border-slate-600 text-white hover:bg-slate-800 hover:text-white bg-transparent text-lg px-8 py-3"
             onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
           >
             View Our Work

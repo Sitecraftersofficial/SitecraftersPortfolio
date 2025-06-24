@@ -37,7 +37,10 @@ const Header = () => {
             <button onClick={() => scrollToSection("contact")} className="text-white hover:text-purple-400 transition-colors">
               Contact
             </button>
-            <Button onClick={() => scrollToSection("contact")} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
+            <Button 
+              onClick={() => scrollToSection("contact")} 
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0"
+            >
               Get Started
             </Button>
           </div>
@@ -70,7 +73,10 @@ const Header = () => {
               <button onClick={() => scrollToSection("contact")} className="text-white hover:text-purple-400 transition-colors text-left">
                 Contact
               </button>
-              <Button onClick={() => scrollToSection("contact")} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 w-fit">
+              <Button 
+                onClick={() => scrollToSection("contact")} 
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 w-fit text-white border-0"
+              >
                 Get Started
               </Button>
             </div>
