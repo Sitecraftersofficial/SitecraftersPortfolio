@@ -39,7 +39,7 @@ const Logo3D = () => {
         className="relative transition-transform duration-200 ease-out mb-6"
         style={{ transformStyle: "preserve-3d" }}
       >
-        <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48">
+        <div className="relative w-24 h-24 m-3 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-[400px] lg:h-[400px]">
           {/* Main logo with 3D effect */}
           <div className="absolute inset-0 transform-gpu">
             <div 
@@ -49,9 +49,9 @@ const Logo3D = () => {
               }}
             >
               <img 
-                src="/lovable-uploads/320aad84-e334-4959-9a17-d2ce793174be.png" 
+                src="/lovable-uploads/siteCraftersLogo.PNG"  
                 alt="SiteCrafters Logo"
-                className="w-full h-full object-contain"
+                className="w-[400px] h-[400px] object-contain"
               />
               {/* Overlay for 3D depth */}
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 rounded-lg"></div>
@@ -69,17 +69,17 @@ const Logo3D = () => {
           </div>
           
           {/* Floating elements */}
-          <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-2 h-2 sm:w-4 sm:h-4 bg-cyan-400 rounded-full animate-pulse"></div>
+          <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-10 h-10 sm:w-4 sm:h-4 bg-cyan-400 rounded-full animate-pulse"></div>
           <div className="absolute -bottom-1 -left-1 sm:-bottom-2 sm:-left-2 w-1.5 h-1.5 sm:w-3 sm:h-3 bg-purple-400 rounded-full animate-pulse delay-300"></div>
           <div className="absolute top-1/2 -right-2 sm:-right-4 w-1 h-1 sm:w-2 sm:h-2 bg-pink-400 rounded-full animate-pulse delay-700"></div>
         </div>
       </div>
       
       <div className="text-center">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent mb-2">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-cyan-300 via-purple-400 to-gray-400 bg-clip-text text-transparent mb-2">
           SiteCrafters
         </h1>
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-cyan-300 font-light tracking-wide px-4">
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-cyan-300 font-400 italic tracking-wide px-4">
           Bold Sites. Smart design. Real impact.
         </p>
       </div>
