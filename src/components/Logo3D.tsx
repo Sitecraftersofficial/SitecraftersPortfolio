@@ -1,5 +1,7 @@
 
 import { useEffect, useRef } from "react";
+import mylogo from '.../../public/Sitecrafters-assets/siteCraftersLogo.jpg'; // Adjust the path as necessary
+ 
 
 const Logo3D = () => {
   const logoRef = useRef<HTMLDivElement>(null);
@@ -49,7 +51,7 @@ const Logo3D = () => {
               }}
             >
               <img 
-                src="public\Sitecrafters-assets\siteCraftersLogo.jpg"  
+                src={mylogo}  
                 alt="SiteCrafters Logo"
                 className="sm:w-[200px] sm:h-[200px] md:w-[250px] md:h-[250px] lg:w-[400px] lg:h-[400px] object-contain"
               />
