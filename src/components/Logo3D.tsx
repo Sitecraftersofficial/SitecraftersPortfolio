@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from "react";
-import mylogo from '.../../public/Sitecrafters-assets/siteCraftersLogo.jpg'; // Adjust the path as necessary
+import mylogo from '../Sitecrafters-assets/siteCraftersLogo.jpg'; // Adjust the path as necessary
  
 
 const Logo3D = () => {
