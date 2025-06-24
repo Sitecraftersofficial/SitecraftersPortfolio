@@ -26,13 +26,13 @@ const Hero = () => {
         {/* 3D Logo */}
         <Logo3D />
         
-        <div className="mb-8 flex justify-center space-x-8 text-slate-400">
-          <Code className="w-8 h-8 animate-pulse" />
-          <Palette className="w-8 h-8 animate-pulse delay-200" />
-          <Rocket className="w-8 h-8 animate-pulse delay-400" />
+        <div className="mb-6 md:mb-8 flex justify-center space-x-4 md:space-x-8 text-slate-400">
+          <Code className="w-6 h-6 md:w-8 md:h-8 animate-pulse" />
+          <Palette className="w-6 h-6 md:w-8 md:h-8 animate-pulse delay-200" />
+          <Rocket className="w-6 h-6 md:w-8 md:h-8 animate-pulse delay-400" />
         </div>
         
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight">
           <span className="text-white">Crafting Digital</span>
           <br />
           <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent animate-pulse">
@@ -40,12 +40,12 @@ const Hero = () => {
           </span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-lg sm:text-xl md:text-2xl text-slate-300 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed px-4">
           We transform ideas into stunning digital experiences. From concept to launch, 
           we're your partner in creating exceptional websites and applications.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 md:mb-16">
           <Button 
             onClick={scrollToContact}
             size="lg" 
@@ -64,18 +64,18 @@ const Hero = () => {
           </Button>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          <div className="text-center p-6 rounded-lg bg-slate-800/30 backdrop-blur-sm border border-slate-700/20">
-            <div className="text-3xl font-bold text-purple-400 mb-2">50+</div>
-            <div className="text-slate-300">Projects Completed</div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto">
+          <div className="text-center p-4 md:p-6 rounded-lg bg-slate-800/30 backdrop-blur-sm border border-slate-700/20">
+            <div className="text-2xl md:text-3xl font-bold text-purple-400 mb-2">50+</div>
+            <div className="text-slate-300 text-sm md:text-base">Projects Completed</div>
           </div>
-          <div className="text-center p-6 rounded-lg bg-slate-800/30 backdrop-blur-sm border border-slate-700/20">
-            <div className="text-3xl font-bold text-pink-400 mb-2">25+</div>
-            <div className="text-slate-300">Happy Clients</div>
+          <div className="text-center p-4 md:p-6 rounded-lg bg-slate-800/30 backdrop-blur-sm border border-slate-700/20">
+            <div className="text-2xl md:text-3xl font-bold text-pink-400 mb-2">25+</div>
+            <div className="text-slate-300 text-sm md:text-base">Happy Clients</div>
           </div>
-          <div className="text-center p-6 rounded-lg bg-slate-800/30 backdrop-blur-sm border border-slate-700/20">
-            <div className="text-3xl font-bold text-blue-400 mb-2">3+</div>
-            <div className="text-slate-300">Years Experience</div>
+          <div className="text-center p-4 md:p-6 rounded-lg bg-slate-800/30 backdrop-blur-sm border border-slate-700/20">
+            <div className="text-2xl md:text-3xl font-bold text-blue-400 mb-2">3+</div>
+            <div className="text-slate-300 text-sm md:text-base">Years Experience</div>
           </div>
         </div>
       </div>

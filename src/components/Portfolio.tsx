@@ -78,11 +78,18 @@ const Portfolio = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
                   <div className="flex space-x-2">
-                    <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                    <Button 
+                      size="sm" 
+                      className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0"
+                    >
                       <ExternalLink className="w-4 h-4 mr-1" />
                       Live
                     </Button>
-                    <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="border-slate-600 text-white hover:bg-slate-700 hover:text-white bg-slate-800/80"
+                    >
                       <Github className="w-4 h-4 mr-1" />
                       Code
                     </Button>
