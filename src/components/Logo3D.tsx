@@ -49,7 +49,7 @@ const Logo3D = () => {
               }}
             >
               <img 
-                src="public\Sitecrafters-assets\siteCraftersLogo.png"  
+                src="public\Sitecrafters-assets\siteCraftersLogo.jpg"  
                 alt="SiteCrafters Logo"
                 className="sm:w-[200px] sm:h-[200px] md:w-[250px] md:h-[250px] lg:w-[400px] lg:h-[400px] object-contain"
               />
