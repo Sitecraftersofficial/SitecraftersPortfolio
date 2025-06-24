@@ -36,10 +36,10 @@ const Logo3D = () => {
     <div className="flex flex-col items-center mb-8 md:mb-12">
       <div 
         ref={logoRef}
-        className="relative transition-transform duration-200 ease-out mb-6"
+        className="relative transition-transform duration-700 ease-out mb-6"
         style={{ transformStyle: "preserve-3d" }}
       >
-        <div className="relative w-24 h-24 m-3 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-[400px] lg:h-[400px]">
+        <div className="relative w-24 h-24 m-3 sm:w-[200px] sm:h-[200px] md:w-[250px] md:h-[250px] lg:w-[400px] lg:h-[400px]">
           {/* Main logo with 3D effect */}
           <div className="absolute inset-0 transform-gpu">
             <div 
@@ -49,9 +49,9 @@ const Logo3D = () => {
               }}
             >
               <img 
-                src="/lovable-uploads/siteCraftersLogo.PNG"  
+                src="public\Sitecrafters-assets\siteCraftersLogo.png"  
                 alt="SiteCrafters Logo"
-                className="w-[400px] h-[400px] object-contain"
+                className="sm:w-[200px] sm:h-[200px] md:w-[250px] md:h-[250px] lg:w-[400px] lg:h-[400px] object-contain"
               />
               {/* Overlay for 3D depth */}
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 rounded-lg"></div>
@@ -69,7 +69,7 @@ const Logo3D = () => {
           </div>
           
           {/* Floating elements */}
-          <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-10 h-10 sm:w-4 sm:h-4 bg-cyan-400 rounded-full animate-pulse"></div>
+          <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-2 h-2 sm:w-4 sm:h-4 bg-cyan-400 rounded-full animate-pulse"></div>
           <div className="absolute -bottom-1 -left-1 sm:-bottom-2 sm:-left-2 w-1.5 h-1.5 sm:w-3 sm:h-3 bg-purple-400 rounded-full animate-pulse delay-300"></div>
           <div className="absolute top-1/2 -right-2 sm:-right-4 w-1 h-1 sm:w-2 sm:h-2 bg-pink-400 rounded-full animate-pulse delay-700"></div>
         </div>
