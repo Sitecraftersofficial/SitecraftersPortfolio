@@ -1,7 +1,12 @@
-import { ArrowRight, Code, Palette, Rocket } from "lucide-react";
+import { ArrowRight, Code, InstagramIcon, Palette, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import Logo3D from "./Logo3D";
+import instagramicon from '../assets/socialmedia/instagram.png';
+import facebookicon from '../assets/socialmedia/facebook.png';
+import gmailicon from '../assets/socialmedia/gmail.png';
+import linkedinicon from '../assets/socialmedia/linkedin.png';
+import whatsappicon from '../assets/socialmedia/whatsapp.png';
 
 // Reusable counter component
 const CounterCard = ({
@@ -90,11 +95,36 @@ const Hero = () => {
         {/* 3D Logo */}
         <Logo3D />
 
-        <div className="mb-6 md:mb-8 flex justify-center space-x-4 md:space-x-8 text-slate-400">
-          <Code className="w-6 h-6 md:w-8 md:h-8 animate-pulse" />
-          <Palette className="w-6 h-6 md:w-8 md:h-8 animate-pulse delay-200" />
-          <Rocket className="w-6 h-6 md:w-8 md:h-8 animate-pulse delay-400" />
-        </div>
+<div className="mb-7 md:mb-8 flex justify-center space-x-4 md:space-x-8">
+  <a href="https://www.instagram.com/sitecraftersz/" target="_blank" rel="noopener noreferrer">
+    <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+      <img src={instagramicon} alt="instagram" className="w-[40px] h-[40px] object-contain" />
+    </div>
+  </a>
+  <a href="https://www.facebook.com/share/1BhjrkKef6/" target="_blank" rel="noopener noreferrer">
+    <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+      <img src={facebookicon} alt="facebook" className="w-[35px] h-[35px] object-contain" />
+    </div>
+  </a>
+  <a href="https://www.linkedin.com/in/site-crafters-a6b199371/" target="_blank" rel="noopener noreferrer">
+    <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+      <img src={linkedinicon} alt="linkedin" className="w-[40px] h-[40px] object-contain" />
+    </div>
+  </a>
+  <a href="https://wa.me/250789599719" target="_blank" rel="noopener noreferrer">
+    <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+      <img src={whatsappicon} alt="whatsapp" className="w-[38px] h-[38px] object-contain" />
+    </div>
+  </a>
+  <a href="mailto:sitecraftersz@gmail.com" target="_blank" rel="noopener noreferrer">
+    <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+      <img src={gmailicon} alt="gmail" className="w-[40px] h-[40px] object-contain" />
+    </div>
+  </a>
+</div>
+
+
+        {/* Hero Content */}
 
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight">
           <span className="text-white">Crafting Digital</span>
