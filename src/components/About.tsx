@@ -7,7 +7,7 @@ const SatisfactionCounter = () => {
   useEffect(() => {
     let start = 0;
     const end = 100;
-    const duration = 1000; // animation duration in ms
+    const duration = 2000; // animation duration in ms
     const increment = end / (duration / 30);
 
     const interval = setInterval(() => {
@@ -25,7 +25,7 @@ const SatisfactionCounter = () => {
 
   return (
     <div className="text-center p-4 rounded-lg bg-slate-700/30">
-      <div className="text-2xl font-bold text-purple-400 mb-2">{count}%</div>
+      <div className="text-2xl font-bold text-cyan-600 mb-2">{count}%</div>
       <div className="text-slate-300 text-sm">Client Satisfaction</div>
     </div>
   );
@@ -39,7 +39,7 @@ const About = () => {
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               About{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-600 to-purple-500 bg-clip-text text-transparent">
                 SiteCrafters
               </span>
             </h2>
@@ -56,7 +56,7 @@ const About = () => {
             <div className="grid grid-cols-2 gap-6">
               <SatisfactionCounter />
               <div className="text-center p-4 rounded-lg bg-slate-700/30">
-                <div className="text-2xl font-bold text-pink-400 mb-2">24/7</div>
+                <div className="text-2xl font-bold text-purple-500 mb-2">24/7</div>
                 <div className="text-slate-300 text-sm">Support Available</div>
               </div>
             </div>
@@ -64,7 +64,7 @@ const About = () => {
 
           <div className="space-y-6">
             <div className="flex items-start space-x-4 p-6 rounded-lg bg-slate-700/30 border border-slate-600/20">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
                 <Users className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -76,7 +76,7 @@ const About = () => {
             </div>
 
             <div className="flex items-start space-x-4 p-6 rounded-lg bg-slate-700/30 border border-slate-600/20">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
                 <Award className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -88,7 +88,7 @@ const About = () => {
             </div>
 
             <div className="flex items-start space-x-4 p-6 rounded-lg bg-slate-700/30 border border-slate-600/20">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
                 <Target className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -100,7 +100,7 @@ const About = () => {
             </div>
 
             <div className="flex items-start space-x-4 p-6 rounded-lg bg-slate-700/30 border border-slate-600/20">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
                 <Zap className="w-6 h-6 text-white" />
               </div>
               <div>
