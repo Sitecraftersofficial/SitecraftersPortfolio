@@ -16,7 +16,7 @@ const Header = () => {
     <header className="fixed top-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-700/20">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 uppercase bg-clip-text text-transparent">
+          <div className="text-2xl cursor-pointer hover:scale-110 transition-all ease-in-out duration-500 font-bold bg-gradient-to-r from-cyan-400 to-purple-500 uppercase bg-clip-text text-transparent">
             SiteCrafters
           </div>
           

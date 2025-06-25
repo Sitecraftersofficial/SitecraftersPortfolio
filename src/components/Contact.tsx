@@ -42,31 +42,31 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/90 rounded-lg p-6">
-              <div className="flex items-center space-x-4 mb-4">
+              <div className="flex items-center lg:justify-start md:justify-center justify-start space-x-4 mb-4">
                 <div className="bg-gradient-to-r from-purple-600 to-cyan-300 p-3 rounded-lg">
                   <Mail className="w-6 h-6 text-black" />
                 </div>
                 <div>
                   <h3 className="text-white font-semibold">Email</h3>
-                  <a href="mailto:sitecraftersz@gmail.com" className="text-slate-300">sitecraftersz@gmail.com</a>
+                  <a href="mailto:sitecraftersz@gmail.com" className="text-slate-300 hover:text-cyan-400">sitecraftersz@gmail.com</a>
                 </div>
               </div>
             </div>
 
             <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/90 rounded-lg p-6">
-              <div className="flex items-center space-x-4 mb-4">
+              <div className="flex items-center lg:justify-start md:justify-center justify-start space-x-4 mb-4">
                 <div className="bg-gradient-to-r from-cyan-300 to-purple-600 p-3 rounded-lg">
                   <Phone className="w-6 h-6 text-black" />
                 </div>
                 <div>
                   <h3 className="text-white font-semibold">Phone</h3>
-                  <a href="tel:250789599719" className="text-slate-300">(+250) 789-599-719</a>
+                  <a href="tel:250789599719" className="text-slate-300 hover:text-cyan-400">(+250) 789-599-719</a>
                 </div>
               </div>
             </div>
 
             <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/90 rounded-lg p-6">
-              <div className="flex items-center space-x-4 mb-4">
+              <div className="flex items-center lg:justify-start md:justify-center justify-start space-x-4 mb-4">
                 <div className="bg-gradient-to-r from-purple-600 to-cyan-300 p-3 rounded-lg">
                   <MapPin className="w-6 h-6 text-black" />
                 </div>

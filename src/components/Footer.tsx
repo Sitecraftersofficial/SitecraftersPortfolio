@@ -20,40 +20,40 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
+            <div className="text-2xl text-purple-400 cursor-default my-5 font-bold uppercase">
               SiteCrafters
             </div>
             <p className="text-slate-300 mb-6 max-w-md">
               We craft exceptional digital experiences that help businesses grow and succeed online.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap lg:justify-start md:justify-start justify-center space-x-2">
               <a href="https://wa.me/250789599719" target="_blank" rel="noopener noreferrer">
-                <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+                <div className="w-[50px] h-[50px] hover:scale-110 transition-all ease-in-out duration-500 flex items-center justify-center bg-transparent rounded-full">
                   <img src={whatsappicon} alt="whatsapp" className="w-[28px] h-[28px] object-contain" />
                 </div>
               </a>
               <a href="https://www.instagram.com/sitecraftersz/" target="_blank" rel="noopener noreferrer">
-                <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+                <div className="w-[50px] h-[50px] hover:scale-110 transition-all ease-in-out duration-500 flex items-center justify-center bg-transparent rounded-full">
                   <img src={instagramicon} alt="instagram" className="w-[30px] h-[30px] object-contain" />
                 </div>
               </a>
               <a href="https://www.facebook.com/share/1BhjrkKef6/" target="_blank" rel="noopener noreferrer">
-                <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+                <div className="w-[50px] h-[50px] hover:scale-110 transition-all ease-in-out duration-500 flex items-center justify-center bg-transparent rounded-full">
                   <img src={facebookicon} alt="facebook" className="w-[25px] h-[25px] object-contain" />
                 </div>
               </a>
               <a href="mailto:sitecraftersz@gmail.com" target="_blank" rel="noopener noreferrer">
-                <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+                <div className="w-[50px] h-[50px] hover:scale-110 transition-all ease-in-out duration-500 flex items-center justify-center bg-transparent rounded-full">
                   <img src={gmailicon} alt="gmail" className="w-[30px] h-[30px] object-contain" />
                 </div>
               </a>
               <a href="https://github.com/Sitecraftersofficial" target="_blank" rel="noopener noreferrer">
-                <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+                <div className="w-[50px] h-[50px] hover:scale-110 transition-all ease-in-out duration-500 flex items-center justify-center bg-transparent rounded-full">
                   <img src={githubicon} alt="github" className="w-[30px] h-[30px] object-contain" />
                 </div>
               </a>
               <a href="https://www.linkedin.com/in/site-crafters-a6b199371/" target="_blank" rel="noopener noreferrer">
-                <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+                <div className="w-[50px] h-[50px] hover:scale-110 transition-all ease-in-out duration-500 flex items-center justify-center bg-transparent rounded-full">
                   <img src={linkedinicon} alt="linkedin" className="w-[30px] h-[30px] object-contain" />
                 </div>
               </a>
@@ -62,7 +62,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-purple-400 cursor-default font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <button
@@ -101,11 +101,11 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Contact</h3>
-            <ul className="space-y-2 text-slate-300">
-              <li><a href="mailto:sitecraftersz@gmail.com" className="text-slate-300">sitecraftersz@gmail.com</a></li>
-              <li><a href="tel:250789599719" className="text-slate-300">(+250) 789-599-719</a></li>
-              <li>Kigali, Rwanda</li>
+            <h3 className="text-purple-400 cursor-default font-semibold mb-4">Contact</h3>
+            <ul className="space-y-2">
+              <li><a href="mailto:sitecraftersz@gmail.com" className="text-slate-300 hover:text-purple-400">sitecraftersz@gmail.com</a></li>
+              <li><a href="tel:250789599719" className="text-slate-300 hover:text-purple-400">(+250) 789-599-719</a></li>
+              <li  className="text-slate-300">Kigali, Rwanda</li>
             </ul>
           </div>
         </div>
