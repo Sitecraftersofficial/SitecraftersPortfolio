@@ -1,5 +1,5 @@
 
-import { Code, Palette, Search, ShoppingCart, Settings, BarChart } from "lucide-react";
+import { Code, Palette, Search, ShoppingCart, Settings, Smartphone, Plug, FileText, Zap } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Services = () => {
@@ -11,16 +11,16 @@ const Services = () => {
       features: ["Responsive Design", "Performance Optimization", "SEO Friendly", "Cross-browser Compatible"]
     },
     {
-      icon: Palette,
-      title: "UI/UX Design",
-      description: "Beautiful, intuitive designs that provide exceptional user experiences and drive conversions.",
-      features: ["User Research", "Wireframing", "Prototyping", "Design Systems"]
-    },
-    {
       icon: Settings,
       title: "Web Maintenance",
       description: "Ongoing support and maintenance to keep your website secure, updated, and performing optimally.",
       features: ["Security Updates", "Performance Monitoring", "Content Updates", "Bug Fixes"]
+    },
+    {
+      icon: Palette,
+      title: "UI/UX Design",
+      description: "Beautiful, intuitive designs that provide exceptional user experiences and drive conversions.",
+      features: ["User Research", "Wireframing", "Prototyping", "Design Systems"]
     },
     {
       icon: Search,
@@ -29,16 +29,16 @@ const Services = () => {
       features: ["Keyword Research", "On-page SEO", "Technical SEO", "Content Strategy"]
     },
     {
-      icon: ShoppingCart,
-      title: "E-commerce Solutions",
-      description: "Complete online stores with payment processing, inventory management, and more.",
-      features: ["Shopify", "WooCommerce", "Custom Solutions", "Payment Integration"]
+      icon: FileText,
+      title: "Landing Page Design",
+      description: "High-converting, responsive landing pages to support your marketing campaigns or product launches.",
+      features: ["One-Page Layout", "Conversion Focused", "Fast Loading", "Mobile Optimized"]
     },
     {
-      icon: BarChart,
-      title: "Analytics & Insights",
-      description: "Data-driven insights to understand your audience and optimize your digital presence.",
-      features: ["Google Analytics", "Performance Tracking", "User Behavior", "Conversion Optimization"]
+      icon: Zap, // or another suitable Lucide icon
+      title: "Website Speed Optimization",
+      description: "Enhance performance and user experience with faster loading times and optimized assets.",
+      features: ["Lighthouse Reports", "Code Minification", "Image Compression", "Lazy Loading"]
     }
   ];
 
@@ -47,18 +47,18 @@ const Services = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Our <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Services</span>
+            Our <span className="bg-gradient-to-r from-cyan-600 to-purple-400 bg-clip-text text-transparent">Services</span>
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             We offer a comprehensive range of digital services to help your business thrive in the digital landscape.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="bg-slate-800/50 border-slate-700/50 hover:bg-slate-800/70 transition-all duration-300 hover:transform hover:-translate-y-2 group">
+            <Card key={index} className="bg-slate-800/50 border-slate-700/50 hover:bg-slate-800/70 transition-all duration-300 hover:scale-105 hover:transform group">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <service.icon className="w-6 h-6 text-white" />
                 </div>
                 <CardTitle className="text-white text-xl">{service.title}</CardTitle>
@@ -78,6 +78,7 @@ const Services = () => {
               </CardContent>
             </Card>
           ))}
+
         </div>
       </div>
     </section>
