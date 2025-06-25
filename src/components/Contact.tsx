@@ -29,7 +29,7 @@ const Contact = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-white">Get In</span>
-            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent ml-3">
+            <span className="bg-gradient-to-r from-cyan-600 to-purple-400 bg-clip-text text-transparent ml-3">
               Touch
             </span>
           </h2>
@@ -43,7 +43,7 @@ const Contact = () => {
           <div className="space-y-8">
             <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/90 rounded-lg p-6">
               <div className="flex items-center lg:justify-start md:justify-center justify-start space-x-4 mb-4">
-                <div className="bg-gradient-to-r from-purple-600 to-cyan-300 p-3 rounded-lg">
+                <div className="bg-gradient-to-r from-purple-600 to-cyan-600 p-3 rounded-lg">
                   <Mail className="w-6 h-6 text-black" />
                 </div>
                 <div>
@@ -55,7 +55,7 @@ const Contact = () => {
 
             <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/90 rounded-lg p-6">
               <div className="flex items-center lg:justify-start md:justify-center justify-start space-x-4 mb-4">
-                <div className="bg-gradient-to-r from-cyan-300 to-purple-600 p-3 rounded-lg">
+                <div className="bg-gradient-to-r from-cyan-600 to-purple-600 p-3 rounded-lg">
                   <Phone className="w-6 h-6 text-black" />
                 </div>
                 <div>
@@ -67,7 +67,7 @@ const Contact = () => {
 
             <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/90 rounded-lg p-6">
               <div className="flex items-center lg:justify-start md:justify-center justify-start space-x-4 mb-4">
-                <div className="bg-gradient-to-r from-purple-600 to-cyan-300 p-3 rounded-lg">
+                <div className="bg-gradient-to-r from-purple-600 to-cyan-600 p-3 rounded-lg">
                   <MapPin className="w-6 h-6 text-black" />
                 </div>
                 <div>
@@ -133,7 +133,7 @@ const Contact = () => {
 
               <Button
                 type="submit"
-                className="w-full bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-300 hover:from-purple-700 hover:to-purple-400 text-lg py-3"
+                className="w-full hover:text-black bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 duration-700 hover:from-purple-700 hover:to-purple-400 text-lg py-3"
               >
                 Send Message
                 <Send className="ml-2 w-5 h-5" />
