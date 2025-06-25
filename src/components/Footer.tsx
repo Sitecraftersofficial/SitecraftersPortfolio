@@ -15,12 +15,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-slate-900/90 border-t border-slate-700/20 py-12 px-4">
+    <footer className="bg-slate-800/30 border-t border-slate-700/20 py-12 px-4">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <div className="text-2xl text-purple-400 cursor-default my-5 font-bold uppercase">
+            <div className="text-4xl font-bold bg-gradient-to-tl from-cyan-600 to-purple-400 bg-clip-text text-transparent mb-4">
               SiteCrafters
             </div>
             <p className="text-slate-300 mb-6 max-w-md">
@@ -61,13 +61,13 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-purple-400 cursor-default font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+          <div className='flex flex-col lg:items-start items-center'>
+            <h3 className="bg-gradient-to-tl from-cyan-600 to-purple-400 bg-clip-text text-transparent cursor-default text-xl font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-2 text-lg">
               <li>
                 <button
                   onClick={() => scrollToSection("home")}
-                  className="text-slate-300 hover:text-purple-400 transition-colors"
+                  className="text-slate-300 hover:text-purple-500 transition-colors"
                 >
                   Home
                 </button>
@@ -75,7 +75,7 @@ const Footer = () => {
               <li>
                 <button
                   onClick={() => scrollToSection("services")}
-                  className="text-slate-300 hover:text-purple-400 transition-colors"
+                  className="text-slate-300 hover:text-purple-500 transition-colors"
                 >
                   Services
                 </button>
@@ -83,7 +83,7 @@ const Footer = () => {
               <li>
                 <button
                   onClick={() => scrollToSection("about")}
-                  className="text-slate-300 hover:text-purple-400 transition-colors"
+                  className="text-slate-300 hover:text-purple-500 transition-colors"
                 >
                   About
                 </button>
@@ -91,7 +91,7 @@ const Footer = () => {
               <li>
                 <button
                   onClick={() => scrollToSection("portfolio")}
-                  className="text-slate-300 hover:text-purple-400 transition-colors"
+                  className="text-slate-300 hover:text-purple-500 transition-colors"
                 >
                   Portfolio
                 </button>
@@ -100,11 +100,11 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div>
-            <h3 className="text-purple-400 cursor-default font-semibold mb-4">Contact</h3>
-            <ul className="space-y-2">
-              <li><a href="mailto:sitecraftersz@gmail.com" className="text-slate-300 hover:text-purple-400">sitecraftersz@gmail.com</a></li>
-              <li><a href="tel:250789599719" className="text-slate-300 hover:text-purple-400">(+250) 789-599-719</a></li>
+          <div className='flex flex-col lg:items-start items-center lg:m-0 md:mr-4 m-0'>
+            <h3 className="bg-gradient-to-tl from-cyan-600 to-purple-400 bg-clip-text text-transparent cursor-default text-xl font-semibold mb-4">Contact</h3>
+            <ul className="space-y-2 text-lg">
+              <li><a href="mailto:sitecraftersz@gmail.com" className="text-slate-300 hover:text-purple-500">sitecraftersz@gmail.com</a></li>
+              <li><a href="tel:250789599719" className="text-slate-300 hover:text-purple-500">(+250) 789-599-719</a></li>
               <li  className="text-slate-300">Kigali, Rwanda</li>
             </ul>
           </div>

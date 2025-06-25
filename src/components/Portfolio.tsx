@@ -1,57 +1,57 @@
 
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import silvagymimage from "../assets/portfolio/silvagym.png";
+import webwizardsimage from "../assets/portfolio/webwizards.png";
+import sitecraftersimage from "../assets/portfolio/sitecrafters.png";
+import bizmanagerimage from "../assets/portfolio/bizmanager.png";
+import carrentalimage from "../assets/portfolio/carrental.png";
+import ecobazarimage from "../assets/portfolio/ecobazar.png";
 
 const Portfolio = () => {
   const projects = [
     {
-      title: "E-commerce Platform",
-      description: "A modern e-commerce solution with advanced filtering, payment integration, and admin dashboard.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      liveUrl: "#",
-      githubUrl: "#"
+      title: "Silva Gym",
+      description: "A sleek gym website with class scheduling, membership management, and a user-friendly admin dashboard.",
+      image: silvagymimage,
+      tags: ["Html", "Css", "Tailwindcss", "Javascript"],
+      liveUrl: "https://silvagym.netlify.app/"
     },
     {
-      title: "SaaS Dashboard",
-      description: "Comprehensive analytics dashboard with real-time data visualization and user management.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-      tags: ["React", "TypeScript", "Chart.js", "Firebase"],
-      liveUrl: "#",
-      githubUrl: "#"
+      title: "Web Wizards",
+      description: "A modern web agency site showcasing services, portfolio, and contact options with a sleek, responsive design.",
+      image: webwizardsimage,
+      tags: ["Html", "Css", "Tailwindcss", "Javascript"],
+      liveUrl: "https://officialwebwizards.netlify.app/"
     },
     {
-      title: "Restaurant Website",
-      description: "Beautiful restaurant website with online ordering, reservation system, and menu management.",
-      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80",
-      tags: ["WordPress", "PHP", "MySQL", "Square API"],
-      liveUrl: "#",
-      githubUrl: "#"
+      title: "Site Crafters",
+      description: "Our own agency website — a modern, responsive design for SiteCrafters, showcasing our services, portfolio, and contact flow.",
+      image: sitecraftersimage,
+      tags: ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      liveUrl: "https://sitecraftersz.netlify.app/"
     },
     {
-      title: "Portfolio Website",
-      description: "Creative portfolio website for a digital artist with gallery, blog, and contact features.",
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80",
-      tags: ["Next.js", "Tailwind CSS", "Sanity CMS"],
-      liveUrl: "#",
-      githubUrl: "#"
+      title: "Biz Manager",
+      description: "A powerful sales and inventory management system with real-time inventory tracking, invoicing, and customer management tools.",
+      image: bizmanagerimage,
+      tags: ["React", "Typescript", "Javascript", "Html", "Css", "Tailwindcss"],
+      liveUrl: "https://bizmanagement.netlify.app/"
     },
     {
-      title: "Mobile Banking App",
-      description: "Secure mobile banking application with biometric authentication and real-time transactions.",
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80",
-      tags: ["React Native", "Redux", "Node.js", "PostgreSQL"],
-      liveUrl: "#",
-      githubUrl: "#"
+      title: "Car Rental",
+      description: "A sleek and conversion-focused landing page for a car rental service, featuring vehicle listings, booking CTA, and responsive design.",
+      image: carrentalimage,
+      tags: ["Html", "Css"],
+      liveUrl: "https://luxedrivecar-rental.netlify.app/"
     },
     {
-      title: "Learning Management System",
-      description: "Comprehensive LMS with course creation, student tracking, and interactive learning tools.",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
-      tags: ["Vue.js", "Laravel", "MySQL", "WebRTC"],
-      liveUrl: "#",
-      githubUrl: "#"
+      title: "Eco Bazar",
+      description: "A clean and eco-friendly online store interface designed for organic products, with category browsing, modern UI, and responsive layout.",
+      image: ecobazarimage,
+      tags: ["Html", "Tailwindcss", "Css"],
+      liveUrl: "https://ecobaazar.netlify.app/"
     }
   ];
 
@@ -60,7 +60,7 @@ const Portfolio = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Our <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Portfolio</span>
+            Our <span className="bg-gradient-to-r from-cyan-600 to-purple-400 bg-clip-text text-transparent">Portfolio</span>
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             Take a look at some of our recent projects and see how we've helped businesses achieve their digital goals.
@@ -76,22 +76,14 @@ const Portfolio = () => {
                   alt={project.title}
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-cyan-900/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
                   <div className="flex space-x-2">
                     <Button 
                       size="sm" 
-                      className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0"
+                      className="bg-gradient-to-r from-cyan-600 to-purple-500 duration-500 hover:text-black hover:from-purple-500 hover:to-cyan-600 text-white border-0"
                     >
                       <ExternalLink className="w-4 h-4 mr-1" />
                       Live
-                    </Button>
-                    <Button 
-                      size="sm" 
-                      variant="outline" 
-                      className="border-slate-600 text-white hover:bg-slate-700 hover:text-white bg-slate-800/80"
-                    >
-                      <Github className="w-4 h-4 mr-1" />
-                      Code
                     </Button>
                   </div>
                 </div>

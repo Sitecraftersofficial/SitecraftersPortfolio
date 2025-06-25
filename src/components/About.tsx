@@ -39,7 +39,7 @@ const About = () => {
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               About{" "}
-              <span className="bg-gradient-to-r from-cyan-600 to-purple-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-600 to-purple-400 bg-clip-text text-transparent">
                 SiteCrafters
               </span>
             </h2>
