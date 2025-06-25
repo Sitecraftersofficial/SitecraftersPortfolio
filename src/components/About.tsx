@@ -6,7 +6,7 @@ const SatisfactionCounter = () => {
 
   useEffect(() => {
     let start = 0;
-    const end = 100;
+    const end = 95;
     const duration = 2000; // animation duration in ms
     const increment = end / (duration / 30);
 

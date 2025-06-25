@@ -177,7 +177,7 @@ const Hero = () => {
             color="text-cyan-600"
           />
           <CounterCard
-            end={25}
+            end={45}
             label="Happy Clients"
             color="text-indigo-500"
           />
