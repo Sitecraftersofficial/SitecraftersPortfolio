@@ -1,4 +1,4 @@
-import { ArrowRight, Code, InstagramIcon, Palette, Rocket } from "lucide-react";
+import { ArrowDown, ArrowRight, Code, InstagramIcon, Palette, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import Logo3D from "./Logo3D";
@@ -26,7 +26,7 @@ const CounterCard = ({
 
     const startCounting = () => {
       let start = 0;
-      const duration = 1500; // animation time
+      const duration = 2000; // animation time
       const increment = end / (duration / 30);
 
       animationId = setInterval(() => {
@@ -40,19 +40,13 @@ const CounterCard = ({
       }, 30);
     };
 
-    startCounting();
+      startCounting();
+  
+      return () => {
+        clearInterval(animationId);
+      };
+    }, [end]);
 
-    // Set repeat every 20 seconds
-    intervalId = setInterval(() => {
-      setCount(0); // reset
-      startCounting(); // replay animation
-    }, 20000); // 20 seconds
-
-    return () => {
-      clearInterval(intervalId);
-      clearInterval(animationId);
-    };
-  }, [end]);
 
   return (
     <div className="text-center p-4 md:p-6 rounded-lg bg-slate-800/30 backdrop-blur-sm border border-slate-700/20">
@@ -67,6 +61,8 @@ const CounterCard = ({
 
 const Hero = () => {
   const [currentText, setCurrentText] = useState(0);
+  const [fade, setFade] = useState(true); // for fade in/out control
+
   const texts = [
     "Web Development",
     "UI/UX Design",
@@ -76,11 +72,17 @@ const Hero = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentText((prev) => (prev + 1) % texts.length);
-    }, 3000);
+      setFade(false); // Start fade-out
+
+      setTimeout(() => {
+        // Switch text after fade-out completes
+        setCurrentText((prev) => (prev + 1) % texts.length);
+        setFade(true); // Start fade-in
+      }, 1000); // Match fade-out duration
+    }, 6000); // Change every 6 seconds
+
     return () => clearInterval(interval);
   }, []);
-
   const scrollToContact = () => {
     const element = document.getElementById("contact");
     element?.scrollIntoView({ behavior: "smooth" });
@@ -129,7 +131,11 @@ const Hero = () => {
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight">
           <span className="text-white">Crafting Digital</span>
           <br />
-          <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent animate-pulse">
+          <span
+            className={`bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 bg-clip-text text-transparent transition-opacity duration-500 ${
+              fade ? "opacity-100" : "opacity-0"
+            }`}
+          >
             {texts[currentText]}
           </span>
         </h1>
@@ -144,7 +150,7 @@ const Hero = () => {
           <Button
             onClick={scrollToContact}
             size="lg"
-            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-lg px-8 py-3 group text-white border-0"
+            className="bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 duration-500 hover:text-black hover:from-purple-700 hover:to-purple-400 text-lg px-8 py-3 group text-white border-0"
           >
             Start Your Project
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -152,32 +158,33 @@ const Hero = () => {
           <Button
             variant="outline"
             size="lg"
-            className="border-slate-600 text-white hover:bg-slate-800 hover:text-white bg-transparent text-lg px-8 py-3"
+            className="bg-gradient-to-r from-cyan-600 via-purple-500 to-purple-400 duration-500 hover:text-black hover:from-purple-400 hover:to-purple-700 text-lg px-8 py-3 group text-white border-0"
             onClick={() =>
               document
                 .getElementById("portfolio")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
           >
-            View Our Work
-          </Button>
+            View Our Portfolio
+            <ArrowDown className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
+          </Button>          
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto">
           <CounterCard
             end={50}
             label="Projects Completed"
-            color="text-purple-400"
+            color="text-cyan-600"
           />
           <CounterCard
             end={25}
             label="Happy Clients"
-            color="text-pink-400"
+            color="text-indigo-500"
           />
           <CounterCard
             end={3}
             label="Years Experience"
-            color="text-blue-400"
+            color="text-purple-500"
           />
         </div>
       </div>

@@ -41,7 +41,7 @@ const Logo3D = () => {
         className="relative transition-transform duration-700 ease-out mb-6"
         style={{ transformStyle: "preserve-3d" }}
       >
-        <div className="relative w-24 h-24 m-3 sm:w-[200px] sm:h-[200px] md:w-[250px] md:h-[250px] lg:w-[400px] lg:h-[400px]">
+        <div className="relative m-3 w-[200px] h-[200px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px]">
           {/* Main logo with 3D effect */}
           <div className="absolute inset-0 transform-gpu">
             <div 
@@ -53,7 +53,7 @@ const Logo3D = () => {
               <img 
                 src={mylogo}  
                 alt="SiteCrafters Logo"
-                className="sm:w-[200px] sm:h-[200px] md:w-[250px] md:h-[250px] lg:w-[400px] lg:h-[400px] object-contain"
+                className="sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px] object-contain"
               />
               {/* Overlay for 3D depth */}
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 rounded-lg"></div>
@@ -71,17 +71,17 @@ const Logo3D = () => {
           </div>
           
           {/* Floating elements */}
-          <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-2 h-2 sm:w-4 sm:h-4 bg-cyan-400 rounded-full animate-pulse"></div>
-          <div className="absolute -bottom-1 -left-1 sm:-bottom-2 sm:-left-2 w-1.5 h-1.5 sm:w-3 sm:h-3 bg-purple-400 rounded-full animate-pulse delay-300"></div>
-          <div className="absolute top-1/2 -right-2 sm:-right-4 w-1 h-1 sm:w-2 sm:h-2 bg-pink-400 rounded-full animate-pulse delay-700"></div>
+          <div className="absolute -top-2 -right-2 w-4 h-4 bg-gradient-to-b from-cyan-600 to-purple-400 rounded-full animate-pulse delay-700"></div>
+          <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-purple-500 rounded-full animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 -right-4 w-2 h-2 bg-purple-400 rounded-full animate-bounce delay-100"></div>
         </div>
       </div>
       
       <div className="text-center">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-cyan-300 via-purple-400 to-gray-400 bg-clip-text text-transparent mb-2">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-cyan-600 via-purple-500 to-purple-400 bg-clip-text text-transparent mb-2">
           SiteCrafters
         </h1>
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-cyan-300 font-400 italic tracking-wide px-4">
+        <p className="text-lg md:text-xl lg:text-2xl text-cyan-500 font-400 italic tracking-wide px-4">
           Bold Sites. Smart design. Real impact.
         </p>
       </div>
