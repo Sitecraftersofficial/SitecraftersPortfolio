@@ -23,10 +23,19 @@ const plans = [
   },
 ];
 
-const Pricing: React.FC = () => {
+interface PricingProps {
+  setSelectedPlan: (plan: string) => void;
+}
+
+const Pricing: React.FC<PricingProps> = ({ setSelectedPlan }) => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleClick = (planName: string) => {
+    setSelectedPlan(planName); // Save selected plan in state
+    scrollToSection("contact");
   };
 
   return (
@@ -69,7 +78,7 @@ const Pricing: React.FC = () => {
               ))}
             </ul>
             <Button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => handleClick(plan.name)} // Pass plan name here
               className="bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 duration-500 hover:from-purple-700 hover:to-purple-400 hover:text-black text-white border-0"
             >
               Get Started

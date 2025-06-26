@@ -104,3 +104,11 @@
       "Segoe UI Emoji", "Segoe UI Symbol";
   }
 }
+
+.toast-notification {
+  min-width: 300px;
+}
+
+.toastCloseButton {
+  line-height: 0;
+}

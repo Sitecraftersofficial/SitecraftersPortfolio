@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
@@ -10,6 +10,8 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  const [selectedPlan, setSelectedPlan] = useState<string>("");
+
   return (
     <div className="min-h-screen bg-black from-gray-900 via-gray-800 to-gray-700">
       <Header />
@@ -17,12 +19,13 @@ const Index = () => {
       <Services />
       <About />
       <Portfolio />
-      <Pricing />
+      <Pricing setSelectedPlan={setSelectedPlan} />
       <Testimonials />
-      <Contact />
+      <Contact selectedPlan={selectedPlan} />
       <Footer />
     </div>
   );
 };
 
 export default Index;
+
