@@ -167,17 +167,17 @@ const Hero = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto">
           <CounterCard
-            end={50}
+            end={20}
             label="Projects Completed"
             color="text-cyan-600"
           />
           <CounterCard
-            end={45}
+            end={15}
             label="Happy Clients"
             color="text-indigo-500"
           />
           <CounterCard
-            end={3}
+            end={2}
             label="Years Experience"
             color="text-purple-500"
           />
