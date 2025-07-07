@@ -118,11 +118,6 @@ const Hero = () => {
       <img src={gmailicon} alt="gmail" className="w-[40px] h-[40px] object-contain" />
     </div>
   </a>
-  <a href="https://www.linkedin.com/in/site-crafters-a6b199371/" target="_blank" rel="noopener noreferrer">
-    <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
-      <img src={linkedinicon} alt="linkedin" className="w-[40px] h-[40px] object-contain" />
-    </div>
-  </a>
 </div>
 
 

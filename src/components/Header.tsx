@@ -16,7 +16,7 @@ const Header = () => {
     <header className="fixed top-0 w-full z-50 bg-slate-900/50 backdrop-blur-md border-b border-slate-700/20">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl cursor-pointer hover:scale-110 transition-all ease-in-out duration-500 font-bold bg-gradient-to-r from-cyan-600 to-purple-500 uppercase bg-clip-text text-transparent">
+          <div className="text-2xl cursor-default hover:scale-110 transition-all ease-in-out duration-500 font-bold bg-gradient-to-r from-cyan-600 to-purple-500 uppercase bg-clip-text text-transparent">
             SiteCrafters
           </div>
           
@@ -33,6 +33,12 @@ const Header = () => {
             </button>
             <button onClick={() => scrollToSection("portfolio")} className="text-white hover:text-purple-500 duration-500 hover:border-b-2 border-purple-500 transition-colors">
               Portfolio
+            </button>
+            <button onClick={() => scrollToSection("pricing")} className="text-white hover:text-purple-500 duration-500 hover:border-b-2 border-purple-500 transition-colors">
+              Pricing
+            </button>
+            <button onClick={() => scrollToSection("testimonials")} className="text-white hover:text-purple-500 duration-500 hover:border-b-2 border-purple-500 transition-colors">
+              Testimonials
             </button>
             <button onClick={() => scrollToSection("contact")} className="text-white hover:text-purple-500 duration-500 hover:border-b-2 border-purple-500 transition-colors">
               Contact
@@ -69,6 +75,12 @@ const Header = () => {
               </button>
               <button onClick={() => scrollToSection("portfolio")} className="text-white duration-300 hover:text-purple-500 transition-colors text-left">
                 Portfolio
+              </button>
+              <button onClick={() => scrollToSection("pricing")} className="text-white duration-300 hover:text-purple-500 transition-colors text-left">
+                Pricing
+              </button>
+              <button onClick={() => scrollToSection("testimonials")} className="text-white duration-300 hover:text-purple-500 transition-colors text-left">
+                Testimonials
               </button>
               <button onClick={() => scrollToSection("contact")} className="text-white duration-300 hover:text-purple-500 transition-colors text-left">
                 Contact

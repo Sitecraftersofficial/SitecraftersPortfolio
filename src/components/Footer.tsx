@@ -52,11 +52,6 @@ const Footer = () => {
                   <img src={githubicon} alt="github" className="w-[30px] h-[30px] object-contain" />
                 </div>
               </a>
-              <a href="https://www.linkedin.com/in/site-crafters-a6b199371/" target="_blank" rel="noopener noreferrer">
-                <div className="w-[50px] h-[50px] hover:scale-110 transition-all ease-in-out duration-500 flex items-center justify-center bg-transparent rounded-full">
-                  <img src={linkedinicon} alt="linkedin" className="w-[30px] h-[30px] object-contain" />
-                </div>
-              </a>
             </div>
           </div>
 
