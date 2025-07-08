@@ -27,9 +27,13 @@ Eg: http://localhost:5173/
 ## **Technologies Used:**
 
 -Vite
+
 -TypeScript
+
 -React
+
 -shadcn-ui
+
 -Tailwind CSS
 
 ## **Deployment**
