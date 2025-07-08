@@ -65,6 +65,15 @@ const Testimonials = () => {
     formState: { isSubmitting },
   } = useForm<FormInputs>();
 
+  // Prevent background scroll when modal is open
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isModalOpen]);
+
   const fetchTestimonials = async () => {
     const { data, error } = await supabase
       .from("testimonials")
@@ -128,7 +137,10 @@ const Testimonials = () => {
       <div className="mx-auto w-full max-w-6xl space-y-10">
         <div className="text-center space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold text-white">
-            What Our <span className="bg-gradient-to-r from-cyan-600 to-purple-400 bg-clip-text text-transparent">Clients Say</span>
+            What Our{" "}
+            <span className="bg-gradient-to-r from-cyan-600 to-purple-400 bg-clip-text text-transparent">
+              Clients Say
+            </span>
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             Real people, real results, real success stories. Hear from those who’ve worked with us.
@@ -149,7 +161,7 @@ const Testimonials = () => {
           <p className="text-center text-slate-400">No testimonials yet.</p>
         ) : (
           <div className="w-full">
-            <Card className="w-full bg-slate-800/50 border-slate-700/50 overflow-hidden shadow-lg transition-opacity duration-700 ease-in-out">
+            <Card className="w-full bg-slate-800/50 border-slate-700/50 hover:-translate-y-2 group overflow-hidden shadow-lg transition-all duration-700 ease-in-out">
               <CardContent className="p-6 sm:p-8 space-y-6 text-slate-300 break-words hyphens-auto">
                 <div className="flex items-center gap-3">
                   {renderStars(testimonialList[visibleIndex].rating)}
@@ -165,7 +177,10 @@ const Testimonials = () => {
                 <div className="pt-4 border-t border-slate-700/40 text-sm space-y-2">
                   <div>
                     <span className="text-white font-semibold">{testimonialList[visibleIndex].name}</span>{" "}
-                    <span className="text-slate-400"> — {testimonialList[visibleIndex].role}{testimonialList[visibleIndex].company && ` at ${testimonialList[visibleIndex].company}`}</span>
+                    <span className="text-slate-400">
+                      — {testimonialList[visibleIndex].role}
+                      {testimonialList[visibleIndex].company && ` at ${testimonialList[visibleIndex].company}`}
+                    </span>
                   </div>
                   {testimonialList[visibleIndex].website && (
                     <div>
@@ -195,6 +210,92 @@ const Testimonials = () => {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        )}
+
+        {/* Modal */}
+        {isModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 px-4">
+            <div
+              className="bg-slate-800 rounded-xl shadow-lg max-w-xl w-full p-6 relative max-h-[90vh] overflow-auto"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="modal-title"
+            >
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="absolute top-4 right-4 text-slate-400 hover:text-white"
+                aria-label="Close modal"
+              >
+                <X size={24} />
+              </button>
+              <h3 id="modal-title" className="text-2xl font-semibold text-white mb-4 text-center">
+                Submit Your Testimonial
+              </h3>
+              <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
+                <input
+                  {...register("name", { required: true })}
+                  disabled={isSubmitting}
+                  className="w-full p-2 rounded bg-slate-700 text-white"
+                  placeholder="Your Name"
+                />
+                <input
+                  {...register("role", { required: true })}
+                  disabled={isSubmitting}
+                  className="w-full p-2 rounded bg-slate-700 text-white"
+                  placeholder="Your Role"
+                />
+                <input
+                  {...register("company")}
+                  disabled={isSubmitting}
+                  className="w-full p-2 rounded bg-slate-700 text-white"
+                  placeholder="Company"
+                />
+                <textarea
+                  {...register("content", { required: true })}
+                  disabled={isSubmitting}
+                  rows={4}
+                  className="w-full p-2 rounded bg-slate-700 text-white"
+                  placeholder="Your Testimonial"
+                />
+                <input
+                  {...register("rating", { required: true, min: 1, max: 5 })}
+                  disabled={isSubmitting}
+                  type="number"
+                  min={1}
+                  max={5}
+                  className="w-full p-2 rounded bg-slate-700 text-white"
+                  placeholder="Rating (1-5)"
+                />
+                <input
+                  {...register("website")}
+                  disabled={isSubmitting}
+                  className="w-full p-2 rounded bg-slate-700 text-white"
+                  placeholder="Website (optional)"
+                />
+                <input
+                  {...register("email", { required: true })}
+                  disabled={isSubmitting}
+                  type="email"
+                  className="w-full p-2 rounded bg-slate-700 text-white"
+                  placeholder="Email"
+                />
+                <input
+                  {...register("phone", { required: true })}
+                  disabled={isSubmitting}
+                  type="tel"
+                  className="w-full p-2 rounded bg-slate-700 text-white"
+                  placeholder="Phone"
+                />
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full py-2 bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 duration-500 hover:from-purple-700 hover:to-purple-400 hover:text-black text-white rounded font-medium transition"
+                >
+                  {isSubmitting ? "Submitting..." : "Submit Testimonial"}
+                </button>
+              </form>
+            </div>
           </div>
         )}
       </div>
