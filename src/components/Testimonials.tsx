@@ -22,7 +22,7 @@ const testimonials: Testimonial[] = [
     content:
       "Working with SiteCrafters was a game-changer for our boutique. Their modern web design and SEO optimization helped us attract more customers and boost sales. Throughout the process, their excellent communication made collaboration smooth and effortless, helping us establish ourselves as industry leaders.",
     rating: 5,
-    email: "marcus@silvafitness.com",
+    email: "scottidris6@gmail.com",
     phone: "+231 88 765 6918",
   },
   {

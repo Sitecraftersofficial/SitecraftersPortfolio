@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import silvagymimage from "../assets/portfolio/silvagym.png";
 import webwizardsimage from "../assets/portfolio/webwizards.png";
 import sitecraftersimage from "../assets/portfolio/sitecrafters.png";
-import bizmanagerimage from "../assets/portfolio/bizmanager.png";
+import exquisitekonnorimage from "../assets/portfolio/exquisitekonnor.png";
 import carrentalimage from "../assets/portfolio/carrental.png";
 import ecobazarimage from "../assets/portfolio/ecobazar.png";
 
@@ -33,11 +33,11 @@ const Portfolio = () => {
       liveUrl: "https://sitecraftersz.netlify.app/"
     },
     {
-      title: "Biz Manager",
-      description: "A powerful sales and inventory management system with real-time inventory tracking, invoicing, and customer management tools.",
-      image: bizmanagerimage,
-      tags: ["React", "Typescript", "Javascript", "Html", "Css", "Tailwindcss"],
-      liveUrl: "https://bizmanagement.netlify.app/"
+      title: "Exquisite Konnor",
+      description: "A premium men's fashion boutique website for ExquisiteKonnor, featuring elegant product showcases, style lookbooks, and seamless client inquiries.",
+      image: exquisitekonnorimage,
+      tags: ["Html", "Css", "Tailwindcss", "Javascript"],
+      liveUrl: "https://exquisitekonnor.netlify.app/"
     },
     {
       title: "Car Rental",
@@ -80,6 +80,7 @@ const Portfolio = () => {
                   <div className="flex space-x-2">
                     <Button 
                       size="sm" 
+                      onClick={() => window.open(project.liveUrl, "_blank")}
                       className="bg-gradient-to-r from-cyan-600 to-purple-500 duration-500 hover:text-black hover:from-purple-500 hover:to-cyan-600 text-white border-0"
                     >
                       <ExternalLink className="w-4 h-4 mr-1" />
