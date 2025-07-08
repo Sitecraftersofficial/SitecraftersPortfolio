@@ -1,8 +1,8 @@
 # Welcome to SiteCrafters
 
 <p float="left">
-  <img src="./src/assets/siteCraftersLogo.png" width="300px" height="320px" />
-  <img src="./src/assets/portfolio/sitecrafters.png" width="700px" height="700px" />
+  <img src="./src/assets/siteCraftersLogo.png" width="320px" height="320px" />
+  <img src="./src/assets/portfolio/sitecrafters.png" width="680px" height="680px" />
 </p>
 
 # Project info
