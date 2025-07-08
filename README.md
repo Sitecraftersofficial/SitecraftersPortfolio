@@ -1,7 +1,7 @@
 # Welcome to SiteCrafters
 
 <p float="left">
-  <img src="./src/assets/portfolio/sitecrafters.png" width="48%" />
+  <img src="./src/assets/siteCraftersLogo.png" width="48%" />
   <img src="./src/assets/portfolio/sitecrafters.png" width="48%" />
 </p>
 
