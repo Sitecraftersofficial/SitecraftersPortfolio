@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { useForm } from "react-hook-form";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, PhoneCall, Star, Globe, ShieldCheck, X } from "lucide-react";
 import { supabase } from "@/lib/supabase";
@@ -8,7 +9,7 @@ interface Testimonial {
   id: string;
   name: string;
   role: string;
-  company: string;
+  company?: string;
   content: string;
   rating: number;
   website?: string;
@@ -18,24 +19,35 @@ interface Testimonial {
   created_at?: string;
 }
 
+interface FormInputs {
+  name: string;
+  role: string;
+  company?: string;
+  content: string;
+  rating: number;
+  website?: string;
+  email: string;
+  phone: string;
+}
+
 const renderStars = (rating: number) => (
-  <div className="flex space-x-[2px]">
+  <div className="flex space-x-[2px]" aria-label={`Rating: ${rating} out of 5 stars`}>
     {[1, 2, 3, 4, 5].map((i) => {
       const isFull = rating >= i;
       const isHalf = !isFull && rating >= i - 0.5;
       if (isFull) {
-        return <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />;
+        return <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />;
       } else if (isHalf) {
         return (
-          <div key={i} className="relative w-4 h-4">
-            <Star className="text-slate-600 absolute top-0 left-0 w-4 h-4" />
-            <div className="absolute top-0 left-0 w-2 h-4 overflow-hidden">
-              <Star className="text-yellow-400 fill-yellow-400 w-4 h-4" />
+          <div key={i} className="relative w-5 h-5">
+            <Star className="text-slate-600 absolute top-0 left-0 w-5 h-5" />
+            <div className="absolute top-0 left-0 w-2.5 h-5 overflow-hidden">
+              <Star className="text-yellow-400 fill-yellow-400 w-5 h-5" />
             </div>
           </div>
         );
       } else {
-        return <Star key={i} className="w-4 h-4 text-slate-600" />;
+        return <Star key={i} className="w-5 h-5 text-slate-600" />;
       }
     })}
   </div>
@@ -43,118 +55,80 @@ const renderStars = (rating: number) => (
 
 const Testimonials = () => {
   const [testimonialList, setTestimonialList] = useState<Testimonial[]>([]);
-  const [visibleIndexes, setVisibleIndexes] = useState<number[]>([0]);
-  const [screen, setScreen] = useState<"sm" | "md" | "lg">("sm");
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [visibleIndex, setVisibleIndex] = useState<number>(0);
   const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { isSubmitting },
+  } = useForm<FormInputs>();
 
-  // Detect screen size
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      if (width >= 1024) setScreen("lg");
-      else if (width >= 768) setScreen("md");
-      else setScreen("sm");
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Auto-slider
-  useEffect(() => {
-    if (testimonialList.length <= 1) return;
-    const interval = setInterval(() => {
-      setVisibleIndexes((prev) => {
-        if (screen === "lg") return [0, 1, 2];
-        if (screen === "md") {
-          const next = (prev[0] + 1) % testimonialList.length;
-          const second = (next + 1) % testimonialList.length;
-          return [next, second];
-        }
-        return [(prev[0] + 1) % testimonialList.length];
-      });
-    }, 10000);
-    return () => clearInterval(interval);
-  }, [screen, testimonialList]);
-
-  // Load testimonials
-  useEffect(() => {
   const fetchTestimonials = async () => {
     const { data, error } = await supabase
       .from("testimonials")
       .select("*")
       .order("created_at", { ascending: false });
 
-    if (error) {
-      console.error("Supabase error:", error);
-      setLoading(false);
-    } else {
-      setTestimonialList(data || []);
-      // Keep spinner for 2 seconds after fetch
-      setTimeout(() => setLoading(false), 2000);
-    }
-  };  
+    if (error) console.error("Error fetching testimonials:", error);
+    else setTestimonialList(data || []);
 
+    setTimeout(() => setLoading(false), 1000);
+  };
+
+  useEffect(() => {
     fetchTestimonials();
   }, []);
 
-  // Handle submission (Supabase + Formspree)
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
+  useEffect(() => {
+    if (testimonialList.length <= 1) return;
 
+    const interval = setInterval(() => {
+      setVisibleIndex((prev) => (prev + 1) % testimonialList.length);
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [testimonialList]);
+
+  const onSubmit = async (formData: FormInputs) => {
     const newTestimonial: Testimonial = {
       id: uuidv4(),
-      name: formData.get("name") as string,
-      role: formData.get("role") as string,
-      company: formData.get("company") as string,
-      content: formData.get("content") as string,
-      rating: parseInt(formData.get("rating") as string),
-      website: formData.get("website") as string,
-      email: formData.get("email") as string,
-      phone: formData.get("phone") as string,
+      ...formData,
       verified: false,
     };
 
-    // Insert into Supabase
-    const { error: supabaseError } = await supabase.from("testimonials").insert([newTestimonial]);
+    const { error } = await supabase.from("testimonials").insert([newTestimonial]);
 
-    if (supabaseError) {
-      alert("Submission failed. Please try again.");
-      console.error(supabaseError);
+    if (error) {
+      alert("Failed to submit. Please try again.");
+      console.error(error);
       return;
     }
 
-    // Submit to Formspree
     try {
-      const formspreeResponse = await fetch("https://formspree.io/f/xblyvzon", {
+      const formspreeData = new FormData();
+      Object.entries(formData).forEach(([k, v]) => formspreeData.append(k, String(v || "")));
+      await fetch("https://formspree.io/f/xblyvzon", {
         method: "POST",
-        headers: {
-          Accept: "application/json",
-        },
-        body: formData,
+        headers: { Accept: "application/json" },
+        body: formspreeData,
       });
-
-      if (!formspreeResponse.ok) {
-        console.warn("Formspree submission failed.");
-      }
     } catch (err) {
-      console.warn("Error sending to Formspree:", err);
+      console.warn("Formspree submission failed:", err);
     }
 
     alert("Thank you! Your testimonial is pending verification.");
-    form.reset();
+    reset();
     setIsModalOpen(false);
   };
 
   return (
     <section id="testimonials" className="py-20 px-4 bg-slate-900">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-6xl space-y-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className="text-center space-y-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
             What Our{" "}
             <span className="bg-gradient-to-r from-cyan-600 to-purple-400 bg-clip-text text-transparent">
               Clients Say
@@ -165,86 +139,72 @@ const Testimonials = () => {
           </p>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="lg:w-[20%] md:w-[40%] w-full m-4 py-2 bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 duration-500 hover:from-purple-700 hover:to-purple-400 hover:text-black text-white rounded font-medium transition"
+            className="w-full sm:w-auto mt-4 px-6 py-2 bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 text-white hover:from-purple-700 hover:to-purple-400 hover:text-black rounded font-medium transition"
           >
-            Open Testimonial Form
+            Submit Testimonial
           </button>
         </div>
 
         {/* Loading spinner */}
         {loading ? (
-          <div className="flex justify-center items-center my-20">
-            <div
-              className="w-16 h-16 rounded-full border-4 border-t-transparent border-purple-400 border-r-purple-500 border-b-cyan-600 border-l-purple-500 animate-spin"
-              aria-label="Loading testimonials"
-              role="status"
-            />
+          <div className="flex justify-center items-center h-40">
+            <div className="w-16 h-16 rounded-full border-4 border-t-transparent border-purple-400 border-r-purple-500 border-b-cyan-600 border-l-purple-500 animate-spin" />
           </div>
+        ) : testimonialList.length === 0 ? (
+          <p className="text-center text-slate-400">No testimonials yet.</p>
         ) : (
-          // Testimonials
-          <div className="relative flex justify-center flex-wrap gap-8">
+          <div className="relative w-full min-h-[360px]">
             {testimonialList.map((t, i) => (
               <div
                 key={t.id}
-                className={`w-full max-w-xl transition-all duration-1000 ease-in-out transform ${
-                  visibleIndexes.includes(i)
-                    ? "opacity-100 scale-100 z-10"
-                    : "opacity-0 scale-95 pointer-events-none absolute z-0"
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                  visibleIndex === i
+                    ? "opacity-100 z-10"
+                    : "opacity-0 z-0 pointer-events-none"
                 }`}
-                style={{ transitionProperty: "opacity, transform" }}
               >
-                <Card className="bg-slate-800/50 border-slate-700/50 hover:-translate-y-2 transition-transform duration-300 group">
-                  <CardContent className="p-6 flex flex-col h-full">
-                    <div className="flex items-center mb-4">
+                <Card className="w-full max-w-full bg-slate-800/50 border-slate-700/50 overflow-hidden shadow-lg">
+                  <CardContent className="p-6 sm:p-8 space-y-6 text-slate-300 break-words hyphens-auto">
+                    <div className="flex items-center gap-3">
                       {renderStars(t.rating)}
                       {t.verified && (
-                        <span className="ml-2 text-xs bg-green-600 text-white px-2 py-0.5 rounded flex items-center gap-1">
+                        <span className="text-xs bg-green-600 text-white px-2 py-0.5 rounded flex items-center gap-1">
                           <ShieldCheck size={12} /> Verified
                         </span>
                       )}
                     </div>
-                    <blockquote className="text-slate-300 mb-6 leading-relaxed flex-grow">
+                    <blockquote className="leading-relaxed text-base sm:text-lg md:text-xl">
                       “{t.content}”
                     </blockquote>
-                    <div className="border-t border-slate-700/50 pt-4">
-                      <div className="text-center md:text-left mb-3">
-                        <h4 className="font-semibold text-white text-lg">{t.name}</h4>
-                        <p className="text-slate-400 text-sm">
-                          {t.role}, {t.company}
-                        </p>
+                    <div className="pt-4 border-t border-slate-700/40 text-sm space-y-2">
+                      <div>
+                        <span className="text-white font-semibold">{t.name}</span>{" "}
+                        <span className="text-slate-400"> — {t.role}{t.company && ` at ${t.company}`}</span>
                       </div>
-                      <div className="text-slate-400 text-sm space-y-1">
-                        {t.website && (
-                          <p>
-                            <Globe className="inline-block w-4 h-4 mr-2" />
-                            <a
-                              href={t.website}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-slate-300 hover:text-cyan-500 hover:underline duration-700"
-                            >
-                              {t.website}
-                            </a>
-                          </p>
-                        )}
-                        <p>
-                          <Mail className="inline-block w-4 h-4 mr-2" />
+                      {t.website && (
+                        <div>
+                          <Globe className="inline-block w-4 h-4 mr-1" />
                           <a
-                            href={`mailto:${t.email}`}
-                            className="text-slate-300 hover:text-cyan-500 hover:underline duration-700"
+                            href={t.website}
+                            className="text-cyan-400 hover:underline break-words"
+                            target="_blank"
+                            rel="noopener noreferrer"
                           >
-                            {t.email}
+                            {t.website}
                           </a>
-                        </p>
-                        <p>
-                          <PhoneCall className="inline-block w-4 h-4 mr-2" />
-                          <a
-                            href={`tel:${t.phone}`}
-                            className="text-slate-300 hover:text-cyan-500 hover:underline duration-700"
-                          >
-                            {t.phone}
-                          </a>
-                        </p>
+                        </div>
+                      )}
+                      <div>
+                        <Mail className="inline-block w-4 h-4 mr-1" />
+                        <a href={`mailto:${t.email}`} className="hover:underline text-cyan-400">
+                          {t.email}
+                        </a>
+                      </div>
+                      <div>
+                        <PhoneCall className="inline-block w-4 h-4 mr-1" />
+                        <a href={`tel:${t.phone}`} className="hover:underline text-cyan-400">
+                          {t.phone}
+                        </a>
                       </div>
                     </div>
                   </CardContent>
@@ -261,71 +221,28 @@ const Testimonials = () => {
               <button
                 onClick={() => setIsModalOpen(false)}
                 className="absolute top-4 right-4 text-slate-400 hover:text-white"
-                aria-label="Close modal"
+                aria-label="Close"
               >
                 <X size={24} />
               </button>
               <h3 className="text-2xl font-semibold text-white mb-4 text-center">
                 Submit Your Testimonial
               </h3>
-              <form className="space-y-4" onSubmit={handleSubmit}>
-                <input
-                  name="name"
-                  required
-                  className="w-full p-2 rounded bg-slate-700 text-white"
-                  placeholder="Your Name"
-                />
-                <input
-                  name="role"
-                  required
-                  className="w-full p-2 rounded bg-slate-700 text-white"
-                  placeholder="Your Role"
-                />
-                <input
-                  name="company"
-                  className="w-full p-2 rounded bg-slate-700 text-white"
-                  placeholder="Company"
-                />
-                <textarea
-                  name="content"
-                  required
-                  rows={4}
-                  className="w-full p-2 rounded bg-slate-700 text-white"
-                  placeholder="Your Testimonial"
-                />
-                <input
-                  name="rating"
-                  type="number"
-                  min={1}
-                  max={5}
-                  required
-                  className="w-full p-2 rounded bg-slate-700 text-white"
-                  placeholder="Rating (1-5)"
-                />
-                <input
-                  name="website"
-                  className="w-full p-2 rounded bg-slate-700 text-white"
-                  placeholder="Website (optional)"
-                />
-                <input
-                  name="email"
-                  type="email"
-                  required
-                  className="w-full p-2 rounded bg-slate-700 text-white"
-                  placeholder="Email"
-                />
-                <input
-                  name="phone"
-                  type="tel"
-                  required
-                  className="w-full p-2 rounded bg-slate-700 text-white"
-                  placeholder="Phone"
-                />
+              <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
+                <input {...register("name", { required: true })} className="w-full p-2 rounded bg-slate-700 text-white" placeholder="Your Name" />
+                <input {...register("role", { required: true })} className="w-full p-2 rounded bg-slate-700 text-white" placeholder="Your Role" />
+                <input {...register("company")} className="w-full p-2 rounded bg-slate-700 text-white" placeholder="Company (optional)" />
+                <textarea {...register("content", { required: true })} rows={4} className="w-full p-2 rounded bg-slate-700 text-white" placeholder="Your Testimonial" />
+                <input {...register("rating", { required: true, min: 1, max: 5 })} type="number" min={1} max={5} className="w-full p-2 rounded bg-slate-700 text-white" placeholder="Rating (1-5)" />
+                <input {...register("website")} className="w-full p-2 rounded bg-slate-700 text-white" placeholder="Website (optional)" />
+                <input {...register("email", { required: true })} type="email" className="w-full p-2 rounded bg-slate-700 text-white" placeholder="Email" />
+                <input {...register("phone", { required: true })} type="tel" className="w-full p-2 rounded bg-slate-700 text-white" placeholder="Phone" />
                 <button
                   type="submit"
-                  className="w-full py-2 bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 duration-500 hover:from-purple-700 hover:to-purple-400 hover:text-black text-white rounded font-medium transition"
+                  disabled={isSubmitting}
+                  className="w-full py-2 bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 hover:from-purple-700 hover:to-purple-400 hover:text-black text-white rounded font-medium transition"
                 >
-                  Submit Testimonial
+                  {isSubmitting ? "Submitting..." : "Submit Testimonial"}
                 </button>
               </form>
             </div>
