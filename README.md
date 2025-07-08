@@ -1,7 +1,9 @@
 # Welcome to SiteCrafters
 
-![Homepage Screenshot](./src/assets/portfolio/sitecrafters.png)
-
+<p float="left">
+  <img src="./src/assets/portfolio/sitecrafters.png" width="48%" />
+  <img src="./src/assets/portfolio/sitecrafters.png" width="48%" />
+</p>
 
 # Project info
 
