@@ -16,29 +16,29 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Marcus Silva",
-    role: "Gym Owner",
-    company: "Silva Fitness",
+    name: "~Idris P Scott",
+    role: "Co-founder",
+    company: "Exquisite Konnors Boutique",
     content:
-      "Working with SiteCrafters was a game-changer for our boutique. Their modern web design and SEO optimization helped us attract more customers and boost sales.",
+      "Working with SiteCrafters was a game-changer for our boutique. Their modern web design and SEO optimization helped us attract more customers and boost sales. Throughout the process, their excellent communication made collaboration smooth and effortless, helping us establish ourselves as industry leaders.",
     rating: 5,
     email: "marcus@silvafitness.com",
-    phone: "+1 555-123-4567",
+    phone: "+231 88 765 6918",
   },
   {
     id: 2,
-    name: "David Chen",
-    role: "CEO",
-    company: "Web Wizards Agency",
+    name: "~Ismail Munyentwari",
+    role: "CEO & Founder",
+    company: "DreamizeAfrica",
     content:
-      "Their modern web design and SEO optimization helped us attract more customers and boost sales. Excellent communication made collaboration smooth and effortless.",
-    rating: 4.5,
-    email: "david@webwizards.com",
-    phone: "+1 555-987-6543",
+      "SiteCrafters is led by a talented team I had the privilege to teach. Their professionalism, attention to detail, and passion for quality work consistently impressed me. With their strong technical skills and ability to learn fast, they’re well-equipped to thrive in the web development industry and deliver real value to clients.",
+    rating: 5,
+    email: "ismailmunyentwari9@gmail.com",
+    phone: "+250 785 837 748",
   },
   {
     id: 3,
-    name: "Sarah Martinez",
+    name: "~Sarah Martinez",
     role: "Operations Manager",
     company: "Luxe Drive",
     content:
