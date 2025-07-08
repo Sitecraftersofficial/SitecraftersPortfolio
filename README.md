@@ -2,7 +2,7 @@
 
 <p float="left">
   <img src="./src/assets/siteCraftersLogo.png" width="400px" height="400px" />
-  <img src="./src/assets/portfolio/sitecrafters.png" width="500px" height="800px" />
+  <img src="./src/assets/portfolio/sitecrafters.png" width="700px" height="800px" />
 </p>
 
 # Project info
