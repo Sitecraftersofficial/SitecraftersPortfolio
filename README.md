@@ -21,8 +21,10 @@ npm install
 # Step 4: Start the development server.
 npm run dev
 ````
-# Step 5: After running npm run dev, click on the localhost link provided:
+### Step 5: After running npm run dev, click on the localhost link provided:
 Eg: http://localhost:5173/
+
+
 
 ## **Technologies Used:**
 
@@ -35,6 +37,8 @@ Eg: http://localhost:5173/
 -shadcn-ui
 
 -Tailwind CSS
+
+
 
 ## **Deployment**
 The project is deployed and live on Netlify:
