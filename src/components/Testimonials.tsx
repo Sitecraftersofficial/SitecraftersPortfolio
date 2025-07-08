@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, PhoneCall, Star } from "lucide-react";
+import { Mail, PhoneCall, Star, Globe, ShieldCheck } from "lucide-react";
 
 interface Testimonial {
   id: number;
@@ -9,6 +9,7 @@ interface Testimonial {
   company: string;
   content: string;
   rating: number;
+  website: string;
   email: string;
   phone: string;
 }
@@ -16,36 +17,15 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "~Idris P Scott",
-    role: "Co-founder",
-    company: "Exquisite Konnors Boutique",
-    content:
-      "Working with SiteCrafters was a game-changer for our boutique. Their modern web design and SEO optimization helped us attract more customers and boost sales. Throughout the process, their excellent communication made collaboration smooth and effortless, helping us establish ourselves as industry leaders.",
-    rating: 5,
-    email: "scottidris6@gmail.com",
-    phone: "+231 88 765 6918",
-  },
-  {
-    id: 2,
     name: "~Ismail Munyentwari",
     role: "CEO & Founder",
     company: "DreamizeAfrica",
     content:
       "SiteCrafters is led by a talented team I had the privilege to teach. Their professionalism, attention to detail, and passion for quality work consistently impressed me. With their strong technical skills and ability to learn fast, they’re well-equipped to thrive in the web development industry and deliver real value to clients.",
     rating: 5,
+    website: "https://dreamizeafrica.com",
     email: "ismailmunyentwari9@gmail.com",
     phone: "+250 785 837 748",
-  },
-  {
-    id: 3,
-    name: "~Sarah Martinez",
-    role: "Operations Manager",
-    company: "Luxe Drive",
-    content:
-      "Working with SiteCrafters was a game-changer. Their modern web design and SEO optimization helped us attract more customers and boost sales.",
-    rating: 5,
-    email: "sarah@luxedrive.com",
-    phone: "+1 555-555-7890",
   },
 ];
 
@@ -90,8 +70,10 @@ const Testimonials = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Auto transition logic
+  // Auto transition logic (disabled for 1 testimonial)
   useEffect(() => {
+    if (testimonials.length <= 1) return;
+
     const interval = setInterval(() => {
       setVisibleIndexes((prev) => {
         if (screen === "lg") return [0, 1, 2];
@@ -117,46 +99,63 @@ const Testimonials = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             What Our{" "}
             <span className="bg-gradient-to-r from-cyan-600 to-purple-400 bg-clip-text text-transparent">
-              Clients Say
+              Mentor Has to Say
             </span>
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Real people, real results, real success stories. See how we've
-            transformed businesses across industries.
+            Real people, real results, real success story. Hear from our satisfied mentor about his experience with the SiteCrafters Team.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="relative flex flex-wrap justify-center gap-6">
+        {/* Testimonial Card(s) */}
+        <div className="relative flex justify-center">
           {testimonials.map((t, i) => (
             <div
               key={t.id}
-              className={`w-full md:w-[48%] lg:w-[30%] transition-all duration-1000 ease-in-out transform ${
+              className={`w-full max-w-xl transition-all duration-1000 ease-in-out transform ${
                 visibleIndexes.includes(i)
                   ? "opacity-100 scale-100 z-10"
                   : "opacity-0 scale-95 pointer-events-none absolute z-0"
               }`}
               style={{ transitionProperty: "opacity, transform" }}
             >
-              <Card className="bg-slate-800/50 border-slate-700/50 h-full hover:-translate-y-2 transition-transform duration-300 group">
+              <Card className="bg-slate-800/50 border-slate-700/50 hover:-translate-y-2 transition-transform duration-300 group">
                 <CardContent className="p-6 flex flex-col h-full">
                   <div className="flex items-center mb-4">
                     {renderStars(t.rating)}
-                    <span className="ml-2 text-slate-300 text-sm">
-                      ({t.rating.toFixed(1)})
+                    <span className="ml-2 text-slate-400 text-sm italic">
+                      Based on 1 verified review
                     </span>
                   </div>
                   <blockquote className="text-slate-300 mb-6 leading-relaxed flex-grow">
-                    "{t.content}"
+                    “{t.content}”
                   </blockquote>
                   <div className="border-t border-slate-700/50 pt-4">
                     <div className="text-center md:text-left mb-3">
-                      <h4 className="font-semibold text-white text-lg">{t.name}</h4>
+                      <h4 className="font-semibold text-white text-lg flex items-center justify-center md:justify-start">
+                        {t.name}
+                        <span className="ml-2 text-xs bg-green-600 text-white px-2 py-0.5 rounded flex items-center gap-1">
+                          <ShieldCheck size={12} /> Verified
+                        </span>
+                      </h4>
                       <p className="text-slate-400 text-sm">
                         {t.role}, {t.company}
                       </p>
                     </div>
                     <div className="text-slate-400 text-sm space-y-1">
+                      {t.website && (
+                        <p>
+                          <Globe className="inline-block w-4 h-4 mr-2" />
+                          <a
+                            href={t.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-slate-300 hover:text-cyan-500 hover:underline duration-700"
+                          >
+                            {t.website}
+                          </a>
+                        </p>
+                      )}
                       <p>
                         <Mail className="inline-block w-4 h-4 mr-2" />
                         <a
