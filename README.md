@@ -23,8 +23,8 @@ npm run dev
 
 # Step 5: After running npm run dev, click on the localhost link provided:
 Eg: http://localhost:5173/
-
-Technologies Used:
+````
+**Technologies Used:**
 
 -Vite
 -TypeScript
@@ -32,7 +32,7 @@ Technologies Used:
 -shadcn-ui
 -Tailwind CSS
 
-Deployment
+## **Deployment**
 The project is deployed and live on Netlify:
 
 https://sitecraftersz.netlify.app/
