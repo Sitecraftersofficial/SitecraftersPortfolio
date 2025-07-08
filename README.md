@@ -1,10 +1,10 @@
 # Welcome to SiteCrafters
 
-## Project info
+# Project info
 
 **Live Website URL**: https://sitecraftersz.netlify.app/
 
-## How to view this project locally
+# How to view this project locally
 
 To run this project on your local machine and see the website in action, follow these steps:
 
@@ -26,7 +26,7 @@ Eg: http://localhost:5173/
 
 
 
-## **Technologies Used:**
+# Technologies Used:
 
 -Vite
 
@@ -40,7 +40,7 @@ Eg: http://localhost:5173/
 
 
 
-## **Deployment**
+# Deployment:
 The project is deployed and live on Netlify:
 
 https://sitecraftersz.netlify.app/
