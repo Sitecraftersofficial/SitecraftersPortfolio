@@ -21,7 +21,7 @@ const Header = () => {
           </div>
           
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             <button onClick={() => scrollToSection("home")} className="text-white hover:text-purple-500 duration-500 hover:border-b-2 border-purple-500 transition-colors">
               Home
             </button>
@@ -53,7 +53,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white"
+            className="lg:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -62,7 +62,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-slate-700/20">
+          <div className=" mt-4 pb-4 border-t border-slate-700/20">
             <div className="flex flex-col space-y-4 pt-4">
               <button onClick={() => scrollToSection("home")} className="text-white duration-300 hover:text-purple-500 transition-colors text-left">
                 Home
