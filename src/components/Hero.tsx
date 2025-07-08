@@ -148,7 +148,7 @@ const Hero = () => {
             className="bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 duration-500 hover:text-black hover:from-purple-700 hover:to-purple-400 text-lg px-8 py-3 group text-white border-0"
           >
             Start Your Project
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform" />
           </Button>
           <Button
             variant="outline"
@@ -177,7 +177,7 @@ const Hero = () => {
             color="text-indigo-500"
           />
           <CounterCard
-            end={2}
+            end={1}
             label="Years Experience"
             color="text-purple-500"
           />
