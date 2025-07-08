@@ -1,5 +1,8 @@
 # Welcome to SiteCrafters
 
+![Homepage Screenshot](./src/assets/portfolio/sitecrafters.png)
+
+
 # Project info
 
 **Live Website URL**: https://sitecraftersz.netlify.app/
