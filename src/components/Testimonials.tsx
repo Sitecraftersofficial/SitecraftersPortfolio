@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, PhoneCall, Star, Globe, ShieldCheck, X } from "lucide-react";
@@ -124,15 +124,11 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 px-4 bg-slate-900">
-      <div className="container mx-auto max-w-6xl space-y-10">
-        {/* Header */}
+    <section id="testimonials" className="px-4 py-20 bg-slate-900 overflow-x-hidden">
+      <div className="mx-auto w-full max-w-6xl space-y-10">
         <div className="text-center space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold text-white">
-            What Our{" "}
-            <span className="bg-gradient-to-r from-cyan-600 to-purple-400 bg-clip-text text-transparent">
-              Clients Say
-            </span>
+            What Our <span className="bg-gradient-to-r from-cyan-600 to-purple-400 bg-clip-text text-transparent">Clients Say</span>
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             Real people, real results, real success stories. Hear from those who’ve worked with us.
@@ -145,7 +141,6 @@ const Testimonials = () => {
           </button>
         </div>
 
-        {/* Loading spinner */}
         {loading ? (
           <div className="flex justify-center items-center h-40">
             <div className="w-16 h-16 rounded-full border-4 border-t-transparent border-purple-400 border-r-purple-500 border-b-cyan-600 border-l-purple-500 animate-spin" />
@@ -153,99 +148,53 @@ const Testimonials = () => {
         ) : testimonialList.length === 0 ? (
           <p className="text-center text-slate-400">No testimonials yet.</p>
         ) : (
-          <div className="relative w-full min-h-[360px]">
-            {testimonialList.map((t, i) => (
-              <div
-                key={t.id}
-                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                  visibleIndex === i
-                    ? "opacity-100 z-10"
-                    : "opacity-0 z-0 pointer-events-none"
-                }`}
-              >
-                <Card className="w-full max-w-full bg-slate-800/50 border-slate-700/50 overflow-hidden shadow-lg">
-                  <CardContent className="p-6 sm:p-8 space-y-6 text-slate-300 break-words hyphens-auto">
-                    <div className="flex items-center gap-3">
-                      {renderStars(t.rating)}
-                      {t.verified && (
-                        <span className="text-xs bg-green-600 text-white px-2 py-0.5 rounded flex items-center gap-1">
-                          <ShieldCheck size={12} /> Verified
-                        </span>
-                      )}
+          <div className="w-full">
+            <Card className="w-full bg-slate-800/50 border-slate-700/50 overflow-hidden shadow-lg transition-opacity duration-700 ease-in-out">
+              <CardContent className="p-6 sm:p-8 space-y-6 text-slate-300 break-words hyphens-auto">
+                <div className="flex items-center gap-3">
+                  {renderStars(testimonialList[visibleIndex].rating)}
+                  {testimonialList[visibleIndex].verified && (
+                    <span className="text-xs bg-green-600 text-white px-2 py-0.5 rounded flex items-center gap-1">
+                      <ShieldCheck size={12} /> Verified
+                    </span>
+                  )}
+                </div>
+                <blockquote className="leading-relaxed text-base sm:text-lg md:text-xl">
+                  “{testimonialList[visibleIndex].content}”
+                </blockquote>
+                <div className="pt-4 border-t border-slate-700/40 text-sm space-y-2">
+                  <div>
+                    <span className="text-white font-semibold">{testimonialList[visibleIndex].name}</span>{" "}
+                    <span className="text-slate-400"> — {testimonialList[visibleIndex].role}{testimonialList[visibleIndex].company && ` at ${testimonialList[visibleIndex].company}`}</span>
+                  </div>
+                  {testimonialList[visibleIndex].website && (
+                    <div>
+                      <Globe className="inline-block w-4 h-4 mr-1" />
+                      <a
+                        href={testimonialList[visibleIndex].website}
+                        className="text-cyan-400 hover:underline break-words"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {testimonialList[visibleIndex].website}
+                      </a>
                     </div>
-                    <blockquote className="leading-relaxed text-base sm:text-lg md:text-xl">
-                      “{t.content}”
-                    </blockquote>
-                    <div className="pt-4 border-t border-slate-700/40 text-sm space-y-2">
-                      <div>
-                        <span className="text-white font-semibold">{t.name}</span>{" "}
-                        <span className="text-slate-400"> — {t.role}{t.company && ` at ${t.company}`}</span>
-                      </div>
-                      {t.website && (
-                        <div>
-                          <Globe className="inline-block w-4 h-4 mr-1" />
-                          <a
-                            href={t.website}
-                            className="text-cyan-400 hover:underline break-words"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {t.website}
-                          </a>
-                        </div>
-                      )}
-                      <div>
-                        <Mail className="inline-block w-4 h-4 mr-1" />
-                        <a href={`mailto:${t.email}`} className="hover:underline text-cyan-400">
-                          {t.email}
-                        </a>
-                      </div>
-                      <div>
-                        <PhoneCall className="inline-block w-4 h-4 mr-1" />
-                        <a href={`tel:${t.phone}`} className="hover:underline text-cyan-400">
-                          {t.phone}
-                        </a>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* Modal */}
-        {isModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 px-4">
-            <div className="bg-slate-800 rounded-xl shadow-lg max-w-xl w-full p-6 relative">
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="absolute top-4 right-4 text-slate-400 hover:text-white"
-                aria-label="Close"
-              >
-                <X size={24} />
-              </button>
-              <h3 className="text-2xl font-semibold text-white mb-4 text-center">
-                Submit Your Testimonial
-              </h3>
-              <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
-                <input {...register("name", { required: true })} className="w-full p-2 rounded bg-slate-700 text-white" placeholder="Your Name" />
-                <input {...register("role", { required: true })} className="w-full p-2 rounded bg-slate-700 text-white" placeholder="Your Role" />
-                <input {...register("company")} className="w-full p-2 rounded bg-slate-700 text-white" placeholder="Company (optional)" />
-                <textarea {...register("content", { required: true })} rows={4} className="w-full p-2 rounded bg-slate-700 text-white" placeholder="Your Testimonial" />
-                <input {...register("rating", { required: true, min: 1, max: 5 })} type="number" min={1} max={5} className="w-full p-2 rounded bg-slate-700 text-white" placeholder="Rating (1-5)" />
-                <input {...register("website")} className="w-full p-2 rounded bg-slate-700 text-white" placeholder="Website (optional)" />
-                <input {...register("email", { required: true })} type="email" className="w-full p-2 rounded bg-slate-700 text-white" placeholder="Email" />
-                <input {...register("phone", { required: true })} type="tel" className="w-full p-2 rounded bg-slate-700 text-white" placeholder="Phone" />
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-2 bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 hover:from-purple-700 hover:to-purple-400 hover:text-black text-white rounded font-medium transition"
-                >
-                  {isSubmitting ? "Submitting..." : "Submit Testimonial"}
-                </button>
-              </form>
-            </div>
+                  )}
+                  <div>
+                    <Mail className="inline-block w-4 h-4 mr-1" />
+                    <a href={`mailto:${testimonialList[visibleIndex].email}`} className="hover:underline text-cyan-400">
+                      {testimonialList[visibleIndex].email}
+                    </a>
+                  </div>
+                  <div>
+                    <PhoneCall className="inline-block w-4 h-4 mr-1" />
+                    <a href={`tel:${testimonialList[visibleIndex].phone}`} className="hover:underline text-cyan-400">
+                      {testimonialList[visibleIndex].phone}
+                    </a>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         )}
       </div>
