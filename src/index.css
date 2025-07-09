@@ -93,12 +93,9 @@
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
       Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol";
@@ -111,4 +108,18 @@
 
 .toastCloseButton {
   line-height: 0;
+}
+
+/* Testimonial Loader */
+@keyframes spin-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.no-spin {
+  animation: spin-reverse 1s linear infinite;
 }

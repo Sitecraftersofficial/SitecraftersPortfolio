@@ -154,8 +154,12 @@ const Testimonials = () => {
         </div>
 
         {loading ? (
-          <div className="flex justify-center items-center h-40">
-            <div className="w-16 h-16 rounded-full border-4 border-t-transparent border-purple-400 border-r-purple-500 border-b-cyan-600 border-l-purple-500 animate-spin" />
+          <div className="flex justify-center items-center py-12">
+            <div className="h-25 w-25 rounded-full animate-spin bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 p-[2px] flex justify-center items-center">
+              <div className="h-20 w-20 rounded-full bg-slate-800 flex justify-center items-center text-black font-bold no-spin">
+                Loading...
+              </div>
+            </div>
           </div>
         ) : testimonialList.length === 0 ? (
           <p className="text-center text-slate-400">No testimonials yet.</p>
@@ -174,41 +178,48 @@ const Testimonials = () => {
                 <blockquote className="leading-relaxed text-base sm:text-lg md:text-xl">
                   “{testimonialList[visibleIndex].content}”
                 </blockquote>
-                <div className="pt-4 border-t border-slate-700/40 text-sm space-y-2">
-                  <div>
-                    <span className="text-white font-semibold">{testimonialList[visibleIndex].name}</span>{" "}
-                    <span className="text-slate-400">
-                      — {testimonialList[visibleIndex].role}
-                      {testimonialList[visibleIndex].company && ` at ${testimonialList[visibleIndex].company}`}
-                    </span>
-                  </div>
-                  {testimonialList[visibleIndex].website && (
-                    <div>
-                      <Globe className="inline-block w-4 h-4 mr-1" />
-                      <a
-                        href={testimonialList[visibleIndex].website}
-                        className="text-cyan-400 hover:underline break-words"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {testimonialList[visibleIndex].website}
-                      </a>
+                    <div className="border-t border-slate-700/50 pt-4">
+                      <div className="text-center md:text-left mb-3">
+                        <h4 className="font-semibold text-white text-lg">{testimonialList[visibleIndex].name}</h4>
+                        <p className="text-slate-400 text-sm">
+                          {testimonialList[visibleIndex].role}, {testimonialList[visibleIndex].company}
+                        </p>
+                      </div>
+                      <div className="text-slate-400 text-sm space-y-1">
+                        {testimonialList[visibleIndex].website && (
+                          <p>
+                            <Globe className="inline-block w-4 h-4 mr-2" />
+                            <a
+                              href={testimonialList[visibleIndex].website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-slate-300 hover:text-cyan-500 hover:underline duration-700"
+                            >
+                              {testimonialList[visibleIndex].website}
+                            </a>
+                          </p>
+                        )}
+                        <p>
+                          <Mail className="inline-block w-4 h-4 mr-2" />
+                          <a
+                            href={`mailto:${testimonialList[visibleIndex].email}`}
+                            className="text-slate-300 hover:text-cyan-500 hover:underline duration-700"
+                          >
+                            {testimonialList[visibleIndex].email}
+                          </a>
+                        </p>
+                        <p>
+                          <PhoneCall className="inline-block w-4 h-4 mr-2" />
+                          <a
+                            href={`tel:${testimonialList[visibleIndex].phone}`}
+                            className="text-slate-300 hover:text-cyan-500 hover:underline duration-700"
+                          >
+                            {testimonialList[visibleIndex].phone}
+                          </a>
+                        </p>
+                      </div>
                     </div>
-                  )}
-                  <div>
-                    <Mail className="inline-block w-4 h-4 mr-1" />
-                    <a href={`mailto:${testimonialList[visibleIndex].email}`} className="hover:underline text-cyan-400">
-                      {testimonialList[visibleIndex].email}
-                    </a>
-                  </div>
-                  <div>
-                    <PhoneCall className="inline-block w-4 h-4 mr-1" />
-                    <a href={`tel:${testimonialList[visibleIndex].phone}`} className="hover:underline text-cyan-400">
-                      {testimonialList[visibleIndex].phone}
-                    </a>
-                  </div>
-                </div>
-              </CardContent>
+                  </CardContent>
             </Card>
           </div>
         )}
