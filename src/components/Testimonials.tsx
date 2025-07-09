@@ -146,9 +146,9 @@ const Testimonials = () => {
           </p>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="w-full sm:w-auto mt-4 px-6 py-2 bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 text-white hover:from-purple-700 hover:to-purple-400 hover:text-black rounded font-medium transition"
+            className="w-full sm:w-auto mt-4 px-6 py-2 duration-700 bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 text-white hover:from-purple-700 hover:to-purple-400 hover:text-black rounded font-medium transition"
           >
-            Submit Testimonial
+            Submit Your Testimonial
           </button>
         </div>
 
