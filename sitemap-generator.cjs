@@ -8,14 +8,11 @@ const links = [
   { url: '/about', changefreq: 'monthly', priority: 0.8 },
   { url: '/contact', changefreq: 'monthly', priority: 0.8 },
   { url: '/services', changefreq: 'monthly', priority: 0.8 },
-  { url: '/portfolio', changefreq: 'monthly', priority: 0.7 },
-  { url: '/dashboard', changefreq: 'monthly', priority: 0.6 },
-  { url: '/privacy-policy', changefreq: 'yearly', priority: 0.4 },
-  { url: '/terms-of-service', changefreq: 'yearly', priority: 0.4 },
+  { url: '/portfolio', changefreq: 'monthly', priority: 0.8},
 ];
 
 (async () => {
-  const stream = new SitemapStream({ hostname: 'https://www.sitecraftersz.netlify.app' });
+  const stream = new SitemapStream({ hostname: 'https://www.sitecraftersz.co' });
 
   links.forEach(link => stream.write(link));
   stream.end();
