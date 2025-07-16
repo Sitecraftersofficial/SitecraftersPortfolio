@@ -1,4 +1,3 @@
-
 import { ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -78,14 +77,19 @@ const Portfolio = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-cyan-900/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
                   <div className="flex space-x-2">
-                    <Button 
-                      size="sm" 
-                      onClick={() => window.open(project.liveUrl, "_blank")}
-                      className="bg-gradient-to-r from-cyan-600 to-purple-500 duration-500 hover:text-black hover:from-purple-500 hover:to-cyan-600 text-white border-0"
+                    <a 
+                      href={project.liveUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
                     >
-                      <ExternalLink className="w-4 h-4 mr-1" />
-                      Live
-                    </Button>
+                      <Button 
+                        size="sm" 
+                        className="bg-gradient-to-r from-cyan-600 to-purple-500 duration-500 hover:text-black hover:from-purple-500 hover:to-cyan-600 text-white border-0"
+                      >
+                        <ExternalLink className="w-4 h-4 mr-1" />
+                        Live
+                      </Button>
+                    </a>
                   </div>
                 </div>
               </div>
