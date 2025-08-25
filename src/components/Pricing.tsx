@@ -17,7 +17,7 @@ const plans = [
   },
   {
     name: "Ultimate",
-    price: "RWF 600K",
+    price: "RWF 600k",
     description: "For startups and custom feature-rich sites.",
     features: ["Unlimited Pages", "Custom CMS", "API Integration", "Priority Support"],
   },
