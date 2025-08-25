@@ -4,20 +4,20 @@ import { Button } from "@/components/ui/button";
 const plans = [
   {
     name: "Starter",
-    price: "$500",
+    price: "RWF 250k",
     description: "Perfect for personal websites or portfolios.",
     features: ["1 Page", "Responsive Design", "Basic SEO", "Delivery in 5 days"],
   },
   {
     name: "Pro",
-    price: "$750",
+    price: "RWF 500k",
     description: "Great for small businesses and service websites.",
-    features: ["Up to 5 Pages", "Contact Form", "SEO Optimization", "Delivery in 7 days"],
+    features: ["Up to 5 Pages", "Contact Form", "SEO Optimization", "Delivery in 10 days"],
     popular: true,
   },
   {
     name: "Ultimate",
-    price: "$1500",
+    price: "RWF 600K",
     description: "For startups and custom feature-rich sites.",
     features: ["Unlimited Pages", "Custom CMS", "API Integration", "Priority Support"],
   },
@@ -45,7 +45,7 @@ const Pricing: React.FC<PricingProps> = ({ setSelectedPlan }) => {
           Our <span className="bg-gradient-to-r from-cyan-600 to-purple-500 bg-clip-text text-transparent">Pricing</span>
         </h2>
         <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-          Transparent and flexible pricing to match your goals.
+          We believe in transparent and flexible pricing to match your goals. All prices listed below are negotiable one-time fees with no hidden costs.
         </p>
       </div>
 
