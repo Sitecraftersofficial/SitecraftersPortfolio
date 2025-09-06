@@ -165,7 +165,7 @@ const Hero = () => {
           </Button>          
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto">
+        {*/   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto">
           <CounterCard
             end={20}
             label="Projects Completed"
@@ -181,7 +181,7 @@ const Hero = () => {
             label="Years Experience"
             color="text-purple-500"
           />
-        </div>
+        </div> */}
       </div>
     </section>
   );
