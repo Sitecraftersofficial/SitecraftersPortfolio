@@ -164,24 +164,7 @@ const Hero = () => {
             <ArrowDown className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
           </Button>          
         </div>
-
-        {*/   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto">
-          <CounterCard
-            end={20}
-            label="Projects Completed"
-            color="text-cyan-600"
-          />
-          <CounterCard
-            end={15}
-            label="Happy Clients"
-            color="text-indigo-500"
-          />
-          <CounterCard
-            end={1}
-            label="Years Experience"
-            color="text-purple-500"
-          />
-        </div> */}
+  
       </div>
     </section>
   );
