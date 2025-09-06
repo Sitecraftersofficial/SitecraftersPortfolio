@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 const plans = [
   {
     name: "Starter",
-    price: "RWF 250k",
+    price: "RWF 310k",
     description: "Perfect for personal websites or portfolios.",
     features: ["1 Page", "Responsive Design", "Basic SEO", "Delivery in 5 days"],
   },
