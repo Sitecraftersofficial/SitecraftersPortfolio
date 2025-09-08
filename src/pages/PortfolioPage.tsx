@@ -1,4 +1,5 @@
-import { ExternalLink } from "lucide-react";
+import { useState } from "react";
+import { ExternalLink, ArrowLeft } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
@@ -27,38 +28,74 @@ const projects = projectsData.map((p) => ({
   image: imageMap[p.image],
 }));
 
-// Choose 3 specific projects to display
-const selectedProjects = [
-  projects.find(p => p.title === "Silva Gym")!,
-  projects.find(p => p.title === "Web Wizards")!,
-  projects.find(p => p.title === "Eco Bazar")!
-];
-
-const Portfolio = () => {
+const PortfolioPage = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const navigate = useNavigate();
 
+  const categories = ["All", "Landing Pages", "Websites", "Templates"];
+
+  // Filter mapped projects by category
+  const filteredProjects =
+    selectedCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
+
   return (
-    <section id="portfolio" className="py-20 px-4">
+    <section className="py-20 px-4 bg-gradient-to-r from-black via-purple-950 to-black min-h-screen">
       <div className="container mx-auto">
+
         {/* Heading */}
-        <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className="text-center mb-6 md:mb-10">
+          <h1 className="text-5xl font-bold text-white mb-4">
             Our{" "}
             <span className="bg-gradient-to-r from-cyan-600 to-purple-400 bg-clip-text text-transparent">
               Portfolio
             </span>
-          </h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-6">
-            Here’s a quick preview of some of our projects. Check out the full portfolio for more!
+          </h1>
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            Explore all of our projects — from landing pages to full-scale
+            websites, showcasing creativity, performance, and clean design.
           </p>
         </div>
 
-        {/* Projects Grid (3 specific projects) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {selectedProjects.map((project, index) => (
+        {/* Controls: Back Button + Categories */}
+        <div className="flex flex-col md:flex-row md:justify-between items-center md:items-start mb-10 gap-4">
+          {/* Back Button */}
+          <div className="order-2 md:order-1 self-center md:self-start">
+            <Button
+              size="sm"
+              onClick={() => navigate("/")}
+              className="flex items-center gap-2 bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 duration-500 hover:from-purple-700 hover:to-purple-400 hover:text-black text-white rounded-[10px] px-3 py-2"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back to Home
+            </Button>
+          </div>
+
+          {/* Category Buttons */}
+          <div className="order-1 md:order-2 flex justify-center gap-4 flex-wrap">
+            {categories.map((category) => (
+              <Button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-full transition-colors ${
+                  selectedCategory === category
+                    ? "bg-gradient-to-r from-cyan-600 to-purple-500 text-white"
+                    : "bg-slate-800/70 text-slate-300 hover:bg-slate-700"
+                }`}
+              >
+                {category}
+              </Button>
+            ))}
+          </div>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project, index) => (
             <Card
               key={index}
-              className="bg-slate-800/50 border-slate-700/50 overflow-hidden hover:transform hover:-translate-y-2 transition-all duration-300 group"
+              className="bg-slate-900/60 border-slate-700 overflow-hidden hover:transform hover:-translate-y-2 transition-all duration-300 group"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -103,20 +140,9 @@ const Portfolio = () => {
             </Card>
           ))}
         </div>
-
-        {/* See More Button */}
-        <div className="flex justify-center mt-10">
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 duration-500 hover:from-purple-700 hover:to-purple-400 hover:text-black text-white border-0"
-            onClick={() => navigate("/portfolio")}
-          >
-            See More
-          </Button>
-        </div>
       </div>
     </section>
   );
 };
 
-export default Portfolio;
+export default PortfolioPage;

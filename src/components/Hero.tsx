@@ -3,9 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import Logo3D from "./Logo3D";
 import instagramicon from '../assets/socialmedia/instagram.png';
-import facebookicon from '../assets/socialmedia/facebook.png';
 import gmailicon from '../assets/socialmedia/gmail.png';
-import linkedinicon from '../assets/socialmedia/linkedin.png';
 import whatsappicon from '../assets/socialmedia/whatsapp.png';
 
 // Reusable counter component
@@ -106,11 +104,6 @@ const Hero = () => {
   <a href="https://www.instagram.com/sitecraftersz/" target="_blank" rel="noopener noreferrer">
     <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
       <img src={instagramicon} alt="instagram" className="w-[40px] h-[40px] object-contain" />
-    </div>
-  </a>
-  <a href="https://www.facebook.com/share/1BhjrkKef6/" target="_blank" rel="noopener noreferrer">
-    <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
-      <img src={facebookicon} alt="facebook" className="w-[35px] h-[35px] object-contain" />
     </div>
   </a>
   <a href="mailto:sitecraftersz@gmail.com" target="_blank" rel="noopener noreferrer">

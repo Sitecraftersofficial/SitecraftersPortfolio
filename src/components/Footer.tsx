@@ -1,10 +1,7 @@
 
 import instagramicon from '../assets/socialmedia/instagram.png';
-import facebookicon from '../assets/socialmedia/facebook.png';
 import gmailicon from '../assets/socialmedia/gmail.png';
-import linkedinicon from '../assets/socialmedia/linkedin.png';
 import whatsappicon from '../assets/socialmedia/whatsapp.png';
-import githubicon from '../assets/socialmedia/github.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -37,19 +34,9 @@ const Footer = () => {
                   <img src={instagramicon} alt="instagram" className="w-[30px] h-[30px] object-contain" />
                 </div>
               </a>
-              <a href="https://www.facebook.com/share/1BhjrkKef6/" target="_blank" rel="noopener noreferrer">
-                <div className="w-[50px] h-[50px] hover:scale-110 transition-all ease-in-out duration-500 flex items-center justify-center bg-transparent rounded-full">
-                  <img src={facebookicon} alt="facebook" className="w-[25px] h-[25px] object-contain" />
-                </div>
-              </a>
               <a href="mailto:sitecraftersz@gmail.com" target="_blank" rel="noopener noreferrer">
                 <div className="w-[50px] h-[50px] hover:scale-110 transition-all ease-in-out duration-500 flex items-center justify-center bg-transparent rounded-full">
                   <img src={gmailicon} alt="gmail" className="w-[30px] h-[30px] object-contain" />
-                </div>
-              </a>
-              <a href="https://github.com/Sitecraftersofficial" target="_blank" rel="noopener noreferrer">
-                <div className="w-[50px] h-[50px] hover:scale-110 transition-all ease-in-out duration-500 flex items-center justify-center bg-transparent rounded-full">
-                  <img src={githubicon} alt="github" className="w-[30px] h-[30px] object-contain" />
                 </div>
               </a>
             </div>
