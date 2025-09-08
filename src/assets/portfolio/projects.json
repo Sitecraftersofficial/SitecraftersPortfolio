@@ -1,11 +1,35 @@
 [
     {
+      "title": "SiteCrafters",
+      "description": "Our own agency website — a modern, responsive design for SiteCrafters, showcasing our services, portfolio, and contact flow.",
+      "image": "sitecrafters.png",
+      "tags": ["React", "Typescript", "Supabase", "PLpgSQL", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://sitecraftersz.netlify.app/",
+      "category": "Websites"
+    },
+    {
+      "title": "Brotherhood Travel Tours",
+      "description": "A vibrant travel agency website for Brotherhood Travel Tours, featuring destination highlights, tour packages, and easy booking options.",
+      "image": "brohoodtraveltours.png",
+      "tags": ["React", "Typescript", "Supabase", "PLpgSQL", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://carvv.netlify.app/",
+      "category": "Websites"
+    },
+    {
         "title": "Silva Gym",
         "description": "A sleek gym website with class scheduling, membership management, and a user-friendly admin dashboard.",
         "image": "silvagym.png",
         "tags": ["Html", "Css", "Tailwindcss", "Javascript"],
         "liveUrl": "https://silvagym.netlify.app/",
         "category": "Websites"
+    },
+    {
+      "title": "HVAC Services",
+      "description": "A professional HVAC services website showcasing services, customer testimonials, and easy contact options.",
+      "image": "hvac.png",
+      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://zansemhvacservices.netlify.app/",
+      "category": "Websites"
     },
     {
         "title": "Web Wizards",
@@ -16,14 +40,6 @@
         "category": "Websites"
     },
     {
-      "title": "SiteCrafters",
-      "description": "Our own agency website — a modern, responsive design for SiteCrafters, showcasing our services, portfolio, and contact flow.",
-      "image": "sitecrafters.png",
-      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
-      "liveUrl": "https://sitecraftersz.netlify.app/",
-      "category": "Websites"
-    },
-    {
       "title": "Exquisite Konnor",
       "description": "A premium men's fashion boutique website for ExquisiteKonnor, featuring elegant product showcases, style lookbooks, and seamless client inquiries.",
       "image": "exquisitekonnor.png",
@@ -31,6 +47,48 @@
       "liveUrl": "https://exquisitekonnor.netlify.app/",
       "category": "Websites"
     },
+
+
+    
+
+
+    {
+      "title": "Personal Trainer Chat System",
+      "description": "A sleek personal training chat system website with service offerings, client testimonials, and easy booking options.",
+      "image": "ptchatsystem.png",
+      "tags": ["React", "Typescript", "Supabase", "PLpgSQL", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://ptchatsystem.netlify.app/",
+      "category": "Templates"
+    },
+    {
+      "title": "Personal Trainer",
+      "description": "A sleek personal trainer website with service offerings, client testimonials, and easy booking options.",
+      "image": "personaltrainer.png",
+      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://personaltrainersweb.netlify.app/",
+      "category": "Templates"
+    },
+    {
+      "title": "Multi Gym",
+      "description": "A comprehensive multi-gym website featuring facility details, membership plans, and class schedules.",
+      "image": "multigym.png",
+      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://multigym.netlify.app/",
+      "category": "Templates"
+    },
+    {
+      "title": "Gym Fitness",
+      "description": "A dynamic gym and fitness center website with class schedules, trainer profiles, and membership sign-up features.",
+      "image": "gym.png",
+      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://gymssite.netlify.app/",
+      "category": "Templates"
+    },
+
+
+
+
+
     {
       "title": "Car Rental",
       "description": "A sleek and conversion-focused landing page for a car rental service, featuring vehicle listings, booking CTA, and responsive design.",
@@ -40,11 +98,35 @@
       "category": "Landing Pages"
     },
     {
+      "title": "Beauty Salon",
+      "description": "A stylish salon and beauty services website showcasing treatments, stylist profiles, and appointment booking features.",
+      "image": "salon.png",
+      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://websalon.netlify.app/",
+      "category": "Landing Pages"
+    },
+    {
+      "title": "Pharmacy",
+      "description": "A modern pharmaceutical website featuring product listings, health tips, and online consultation options.",
+      "image": "pharma.png",
+      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://pharmasweb.netlify.app/",
+      "category": "Landing Pages"
+    },
+    {
       "title": "Eco Bazar",
       "description": "A clean and eco-friendly online store interface designed for organic products, with category browsing, modern UI, and responsive layout.",
       "image": "ecobazar.png",
       "tags": ["Html", "Tailwindcss", "Css"],
       "liveUrl": "https://ecobaazar.netlify.app/",
+      "category": "Landing Pages"
+    },
+    {
+      "title": "Sports Academy",
+      "description": "A dynamic sports academy website featuring training programs, coach profiles, and enrollment options.",
+      "image": "sportsacademy.png",
+      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://kesa.netlify.app/",
       "category": "Landing Pages"
     }
 ]

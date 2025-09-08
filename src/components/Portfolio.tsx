@@ -10,6 +10,15 @@ import sitecraftersimage from "../assets/portfolio/sitecrafters.png";
 import exquisitekonnorimage from "../assets/portfolio/exquisitekonnor.png";
 import carrentalimage from "../assets/portfolio/carrental.png";
 import ecobazarimage from "../assets/portfolio/ecobazar.png";
+import brohoodtraveltoursimage from "../assets/portfolio/brohoodtraveltours.png";
+import gymimage from "../assets/portfolio/gym.png";
+import hvacimage from "../assets/portfolio/hvac.png";
+import multigymimage from "../assets/portfolio/multigym.png";
+import personaltrainerimage from "../assets/portfolio/personaltrainer.png";
+import pharmaimage from "../assets/portfolio/pharma.png";
+import ptchatsystemimage from "../assets/portfolio/ptchatsystem.png";
+import salonimage from "../assets/portfolio/salon.png";
+import sportsacademyimage from "../assets/portfolio/sportsacademy.png";
 
 // Map JSON filenames to imported images
 const imageMap: Record<string, string> = {
@@ -19,6 +28,15 @@ const imageMap: Record<string, string> = {
   "exquisitekonnor.png": exquisitekonnorimage,
   "carrental.png": carrentalimage,
   "ecobazar.png": ecobazarimage,
+  "brohoodtraveltours.png": brohoodtraveltoursimage,
+  "gym.png": gymimage,
+  "hvac.png": hvacimage,
+  "multigym.png": multigymimage,
+  "personaltrainer.png": personaltrainerimage,
+  "pharma.png": pharmaimage,
+  "ptchatsystem.png": ptchatsystemimage,
+  "salon.png": salonimage,
+  "sportsacademy.png": sportsacademyimage,
 };
 
 // Map images to projects
@@ -29,9 +47,9 @@ const projects = projectsData.map((p) => ({
 
 // Choose 3 specific projects to display
 const selectedProjects = [
-  projects.find(p => p.title === "Silva Gym")!,
-  projects.find(p => p.title === "Web Wizards")!,
-  projects.find(p => p.title === "Eco Bazar")!
+  projects.find(p => p.title === "Brotherhood Travel Tours")!,
+  projects.find(p => p.title === "Personal Trainer Chat System")!,
+  projects.find(p => p.title === "Beauty Salon")!
 ];
 
 const Portfolio = () => {
@@ -109,7 +127,10 @@ const Portfolio = () => {
           <Button
             size="lg"
             className="bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 duration-500 hover:from-purple-700 hover:to-purple-400 hover:text-black text-white border-0"
-            onClick={() => navigate("/portfolio")}
+            onClick={() => {
+              navigate("/portfolio");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
           >
             See More
           </Button>
