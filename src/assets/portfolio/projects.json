@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Silva Gym",
+        "description": "A sleek gym website with class scheduling, membership management, and a user-friendly admin dashboard.",
+        "image": "silvagym.png",
+        "tags": ["Html", "Css", "Tailwindcss", "Javascript"],
+        "liveUrl": "https://silvagym.netlify.app/",
+        "category": "Websites"
+    },
+    {
+        "title": "Web Wizards",
+        "description": "A modern web agency site showcasing services, portfolio, and contact options with a sleek, responsive design.",
+        "image": "webwizards.png",
+        "tags": ["Html", "Css", "Tailwindcss", "Javascript"],
+        "liveUrl": "https://officialwebwizards.netlify.app/",
+        "category": "Websites"
+    },
+    {
+      "title": "SiteCrafters",
+      "description": "Our own agency website — a modern, responsive design for SiteCrafters, showcasing our services, portfolio, and contact flow.",
+      "image": "sitecrafters.png",
+      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://sitecraftersz.netlify.app/",
+      "category": "Websites"
+    },
+    {
+      "title": "Exquisite Konnor",
+      "description": "A premium men's fashion boutique website for ExquisiteKonnor, featuring elegant product showcases, style lookbooks, and seamless client inquiries.",
+      "image": "exquisitekonnor.png",
+      "tags": ["Html", "Css", "Tailwindcss", "Javascript"],
+      "liveUrl": "https://exquisitekonnor.netlify.app/",
+      "category": "Websites"
+    },
+    {
+      "title": "Car Rental",
+      "description": "A sleek and conversion-focused landing page for a car rental service, featuring vehicle listings, booking CTA, and responsive design.",
+      "image": "carrental.png",
+      "tags": ["Html", "Css"],
+      "liveUrl": "https://luxedrivecar-rental.netlify.app/",
+      "category": "Landing Pages"
+    },
+    {
+      "title": "Eco Bazar",
+      "description": "A clean and eco-friendly online store interface designed for organic products, with category browsing, modern UI, and responsive layout.",
+      "image": "ecobazar.png",
+      "tags": ["Html", "Tailwindcss", "Css"],
+      "liveUrl": "https://ecobaazar.netlify.app/",
+      "category": "Landing Pages"
+    }
+]
