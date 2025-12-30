@@ -38,12 +38,12 @@ const CounterCard = ({
       }, 30);
     };
 
-      startCounting();
-  
-      return () => {
-        clearInterval(animationId);
-      };
-    }, [end]);
+    startCounting();
+
+    return () => {
+      clearInterval(animationId);
+    };
+  }, [end]);
 
 
   return (
@@ -95,23 +95,23 @@ const Hero = () => {
         {/* 3D Logo */}
         <Logo3D />
 
-<div className="mb-7 md:mb-8 flex justify-center space-x-4 md:space-x-8">
-  <a href="https://wa.me/250789599719" target="_blank" rel="noopener noreferrer">
-    <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
-      <img src={whatsappicon} alt="whatsapp" className="w-[38px] h-[38px] object-contain" />
-    </div>
-  </a>
-  <a href="https://www.instagram.com/sitecraftersz/" target="_blank" rel="noopener noreferrer">
-    <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
-      <img src={instagramicon} alt="instagram" className="w-[40px] h-[40px] object-contain" />
-    </div>
-  </a>
-  <a href="mailto:sitecraftersz@gmail.com" target="_blank" rel="noopener noreferrer">
-    <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
-      <img src={gmailicon} alt="gmail" className="w-[40px] h-[40px] object-contain" />
-    </div>
-  </a>
-</div>
+        <div className="mb-7 md:mb-8 flex justify-center space-x-4 md:space-x-8">
+          <a href="https://wa.me/250789599719" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+            <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+              <img src={whatsappicon} alt="WhatsApp - Contact SiteCrafters" className="w-[38px] h-[38px] object-contain" />
+            </div>
+          </a>
+          <a href="https://www.instagram.com/sitecraftersz/" target="_blank" rel="noopener noreferrer" aria-label="Follow SiteCrafters on Instagram">
+            <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+              <img src={instagramicon} alt="Instagram - SiteCrafters Portfolio" className="w-[40px] h-[40px] object-contain" />
+            </div>
+          </a>
+          <a href="mailto:sitecraftersz@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email SiteCrafters">
+            <div className="w-[50px] h-[50px] flex items-center justify-center bg-transparent rounded-full">
+              <img src={gmailicon} alt="Email - Contact SiteCrafters" className="w-[40px] h-[40px] object-contain" />
+            </div>
+          </a>
+        </div>
 
 
         {/* Hero Content */}
@@ -120,9 +120,8 @@ const Hero = () => {
           <span className="text-white">Crafting Digital</span>
           <br />
           <span
-            className={`bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 bg-clip-text text-transparent transition-opacity duration-500 ${
-              fade ? "opacity-100" : "opacity-0"
-            }`}
+            className={`bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 bg-clip-text text-transparent transition-opacity duration-500 ${fade ? "opacity-100" : "opacity-0"
+              }`}
           >
             {texts[currentText]}
           </span>
@@ -155,7 +154,7 @@ const Hero = () => {
           >
             View Our Portfolio
             <ArrowDown className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
-          </Button>          
+          </Button>
         </div>
 
         {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto">

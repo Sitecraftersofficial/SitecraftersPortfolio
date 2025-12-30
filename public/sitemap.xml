@@ -6,28 +6,76 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
   xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
+  <!-- Homepage - Primary Focus -->
   <url>
     <loc>https://www.sitecraftersz.co/</loc>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.sitecraftersz.co/siteCraftersLogo.jpg</image:loc>
+      <image:title>SiteCrafters - Professional Web Development</image:title>
+      <image:caption>Custom web development and design services</image:caption>
+    </image:image>
   </url>
-  <url>
-    <loc>https://www.sitecraftersz.co/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.sitecraftersz.co/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.sitecraftersz.co/services</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  
+  <!-- Portfolio Page - High Priority -->
   <url>
     <loc>https://www.sitecraftersz.co/portfolio</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Services Section - Key Landing Point -->
+  <url>
+    <loc>https://www.sitecraftersz.co/#services</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- About Section -->
+  <url>
+    <loc>https://www.sitecraftersz.co/#about</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Contact Section - Conversion Point -->
+  <url>
+    <loc>https://www.sitecraftersz.co/#contact</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Pricing Section -->
+  <url>
+    <loc>https://www.sitecraftersz.co/#pricing</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- FAQ Section - Featured Snippets Target -->
+  <url>
+    <loc>https://www.sitecraftersz.co/#faq</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Testimonials Section - Trust Signals -->
+  <url>
+    <loc>https://www.sitecraftersz.co/#testimonials</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
