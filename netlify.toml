@@ -1,0 +1,46 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[[redirects]]
+  from = "http://sitecraftersz.co/*"
+  to = "https://www.sitecraftersz.co/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.sitecraftersz.co/*"
+  to = "https://www.sitecraftersz.co/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://sitecraftersz.co/*"
+  to = "https://www.sitecraftersz.co/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain"

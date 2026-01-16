@@ -1,0 +1,12 @@
+# Netlify redirects for SPA (Single Page Application)
+# This ensures all routes are handled by index.html for client-side routing
+
+# Force HTTPS - Redirect all HTTP traffic to HTTPS
+http://sitecraftersz.co/*    https://www.sitecraftersz.co/:splat    301!
+http://www.sitecraftersz.co/*    https://www.sitecraftersz.co/:splat    301!
+
+# Force www - Redirect non-www to www
+https://sitecraftersz.co/*    https://www.sitecraftersz.co/:splat    301!
+
+# SPA routing - Redirect all routes to index.html with 200 status (must be last)
+/*    /index.html   200

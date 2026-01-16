@@ -2,6 +2,9 @@
 User-agent: *
 Allow: /
 
+# Sitemap location (canonical URL)
+Sitemap: https://www.sitecraftersz.co/sitemap.xml
+
 # Specific bot rules
 User-agent: Googlebot
 Allow: /
