@@ -27,7 +27,7 @@ const Index = () => {
       <Services />
       <About />
       <Portfolio />
-      <Pricing setSelectedPlan={setSelectedPlan} />
+     /* <Pricing setSelectedPlan={setSelectedPlan} /> */
       <Testimonials />
       <FAQ />
       <Contact selectedPlan={selectedPlan} />
