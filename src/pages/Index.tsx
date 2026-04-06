@@ -4,7 +4,7 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import About from "@/components/About";
 import Portfolio from "@/components/Portfolio";
-import Pricing from "@/components/Pricing";
+/* import Pricing from "@/components/Pricing"; */
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 
 const Index = () => {
-  const [selectedPlan, setSelectedPlan] = useState<string>("");
+  const [selectedPlan] = useState<string>("");
 
   return (
     <div className="min-h-screen bg-black from-gray-900 via-gray-800 to-gray-700">
@@ -27,7 +27,7 @@ const Index = () => {
       <Services />
       <About />
       <Portfolio />
-     /* <Pricing setSelectedPlan={setSelectedPlan} /> */
+    /* <Pricing setSelectedPlan={setSelectedPlan} /> */
       <Testimonials />
       <FAQ />
       <Contact selectedPlan={selectedPlan} />

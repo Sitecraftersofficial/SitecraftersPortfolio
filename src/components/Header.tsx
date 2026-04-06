@@ -45,17 +45,17 @@ const Header = () => {
             <button onClick={() => scrollToSection("portfolio")} className="text-white hover:text-purple-500 duration-500 hover:border-b-2 border-purple-500 transition-colors">
               Portfolio
             </button>
-            <button onClick={() => scrollToSection("pricing")} className="text-white hover:text-purple-500 duration-500 hover:border-b-2 border-purple-500 transition-colors">
+            {/* <button onClick={() => scrollToSection("pricing")} className="text-white hover:text-purple-500 duration-500 hover:border-b-2 border-purple-500 transition-colors">
               Pricing
-            </button>
+            </button> */}
             <button onClick={() => scrollToSection("testimonials")} className="text-white hover:text-purple-500 duration-500 hover:border-b-2 border-purple-500 transition-colors">
               Testimonials
             </button>
             <button onClick={() => scrollToSection("contact")} className="text-white hover:text-purple-500 duration-500 hover:border-b-2 border-purple-500 transition-colors">
               Contact
             </button>
-            <Button 
-              onClick={() => scrollToSection("contact")} 
+            <Button
+              onClick={() => scrollToSection("contact")}
               className="bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 duration-500 hover:from-purple-700 hover:to-purple-400 hover:text-black text-white border-0"
             >
               Get Started
@@ -103,17 +103,17 @@ const Header = () => {
               <button onClick={() => scrollToSection("portfolio")} className="text-white text-lg hover:text-purple-500 transition-colors text-left">
                 Portfolio
               </button>
-              <button onClick={() => scrollToSection("pricing")} className="text-white text-lg hover:text-purple-500 transition-colors text-left">
+              {/* <button onClick={() => scrollToSection("pricing")} className="text-white text-lg hover:text-purple-500 transition-colors text-left">
                 Pricing
-              </button>
+              </button> */}
               <button onClick={() => scrollToSection("testimonials")} className="text-white text-lg hover:text-purple-500 transition-colors text-left">
                 Testimonials
               </button>
               <button onClick={() => scrollToSection("contact")} className="text-white text-lg hover:text-purple-500 transition-colors text-left">
                 Contact
               </button>
-              <Button 
-                onClick={() => scrollToSection("contact")} 
+              <Button
+                onClick={() => scrollToSection("contact")}
                 className="bg-gradient-to-r from-purple-400 via-purple-500 to-cyan-600 text-white text-lg px-6 py-3 rounded-xl"
               >
                 Get Started

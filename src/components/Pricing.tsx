@@ -1,3 +1,4 @@
+/*
 import React from "react";
 import { Button } from "@/components/ui/button";
 
@@ -57,72 +58,72 @@ const Pricing: React.FC<PricingProps> = ({ setSelectedPlan }) => {
   return (
     <>
       {/* Main Pricing Section */}
-      <section id="pricing" className="py-20 px-4 bg-black">
-        <div className="w-[80%] mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Our{" "}
-            <span className="bg-gradient-to-r from-cyan-600 to-purple-500 bg-clip-text text-transparent">
-              Pricing
-            </span>
-          </h2>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            We believe in transparent and flexible pricing to match your goals.{" "}
-            <span className="font-bold line-clamp-1">
-              ALL PRICES LISTED BELOW ARE NEGOTIABLE
-            </span>{" "}
-            and are One-time-fee with no hidden costs.
-          </p>
+<section id="pricing" className="py-20 px-4 bg-black">
+  <div className="w-[80%] mx-auto text-center mb-16">
+    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+      Our{" "}
+      <span className="bg-gradient-to-r from-cyan-600 to-purple-500 bg-clip-text text-transparent">
+        Pricing
+      </span>
+    </h2>
+    <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+      We believe in transparent and flexible pricing to match your goals.{" "}
+      <span className="font-bold line-clamp-1">
+        ALL PRICES LISTED BELOW ARE NEGOTIABLE
+      </span>{" "}
+      and are One-time-fee with no hidden costs.
+    </p>
+  </div>
+
+  <div className="w-[80%] mx-auto">
+    {/* Desktop grid (lg and up) */}
+    <div className="hidden lg:grid grid-cols-3 gap-8">
+      {plans.map((plan, index) => (
+        <PlanCard key={index} plan={plan} handleClick={handleClick} />
+      ))}
+    </div>
+
+    {/* Medium screen layout (2 cards + 1 centered) */}
+    <div className="hidden md:block lg:hidden">
+      <div className="grid grid-cols-2 gap-8">
+        {plans.slice(0, 2).map((plan, index) => (
+          <PlanCard key={index} plan={plan} handleClick={handleClick} />
+        ))}
+      </div>
+      <div className="mt-8 flex justify-center">
+        <div className="w-full md:w-1/2">
+          <PlanCard plan={plans[2]} handleClick={handleClick} />
         </div>
+      </div>
+    </div>
 
-        <div className="w-[80%] mx-auto">
-          {/* Desktop grid (lg and up) */}
-          <div className="hidden lg:grid grid-cols-3 gap-8">
-            {plans.map((plan, index) => (
-              <PlanCard key={index} plan={plan} handleClick={handleClick} />
-            ))}
-          </div>
+    {/* Small screen layout (1 column) */}
+    <div className="flex flex-col gap-8 md:hidden">
+      {plans.map((plan, index) => (
+        <PlanCard key={index} plan={plan} handleClick={handleClick} />
+      ))}
+    </div>
+  </div>
+</section>
 
-          {/* Medium screen layout (2 cards + 1 centered) */}
-          <div className="hidden md:block lg:hidden">
-            <div className="grid grid-cols-2 gap-8">
-              {plans.slice(0, 2).map((plan, index) => (
-                <PlanCard key={index} plan={plan} handleClick={handleClick} />
-              ))}
-            </div>
-            <div className="mt-8 flex justify-center">
-              <div className="w-full md:w-1/2">
-                <PlanCard plan={plans[2]} handleClick={handleClick} />
-              </div>
-            </div>
-          </div>
+{/* Maintenance Call to Action Section */ }
+<section className="py-20 px-4 bg-gradient-to-r from-purple-900 via-black to-cyan-900">
+  <div className="w-[80%] mx-auto text-center mb-16">
+    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+      Website Maintenance Plans
+    </h2>
+    <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+      Keep your site secure, updated, and performing at its best with our flexible maintenance options.
+      <span className="font-bold line-clamp-1"> PRICES ARE NEGOTIABLE</span>
+    </p>
+  </div>
 
-          {/* Small screen layout (1 column) */}
-          <div className="flex flex-col gap-8 md:hidden">
-            {plans.map((plan, index) => (
-              <PlanCard key={index} plan={plan} handleClick={handleClick} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Maintenance Call to Action Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-purple-900 via-black to-cyan-900">
-        <div className="w-[80%] mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Website Maintenance Plans
-          </h2>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-            Keep your site secure, updated, and performing at its best with our flexible maintenance options.
-            <span className="font-bold line-clamp-1"> PRICES ARE NEGOTIABLE</span>
-          </p>
-        </div>
-
-        <div className="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          {maintenancePlans.map((plan, index) => (
-            <PlanCard key={index} plan={plan} handleClick={handleClick} />
-          ))}
-        </div>
-      </section>
+  <div className="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+    {maintenancePlans.map((plan, index) => (
+      <PlanCard key={index} plan={plan} handleClick={handleClick} />
+    ))}
+  </div>
+</section>
     </>
   );
 };
@@ -141,11 +142,10 @@ interface PlanCardProps {
 const PlanCard: React.FC<PlanCardProps> = ({ plan, handleClick }) => {
   return (
     <div
-      className={`relative p-8 rounded-2xl border text-left shadow-md transform transition-all duration-300 hover:scale-105 hover:shadow-xl ${
-        plan.popular
+      className={`relative p-8 rounded-2xl border text-left shadow-md transform transition-all duration-300 hover:scale-105 hover:shadow-xl ${plan.popular
           ? "bg-slate-800/60 border-purple-500 scale-105 ring-1 ring-purple-500"
           : "bg-slate-800/50 border-slate-700/50"
-      }`}
+        }`}
     >
       {plan.popular && (
         <div className="absolute top-0 right-0 bg-purple-500 text-white text-xs font-semibold px-3 py-1 rounded-tr-2xl rounded-bl-2xl">
@@ -176,3 +176,5 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, handleClick }) => {
 };
 
 export default Pricing;
+
+*/
