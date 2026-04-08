@@ -86,8 +86,8 @@ const Footer = () => {
             <h3 className="bg-gradient-to-tl from-cyan-600 to-purple-400 bg-clip-text text-transparent cursor-default text-xl font-semibold mb-4">Contact</h3>
             <ul className="space-y-2 text-lg">
               <li><a href="mailto:sitecraftersz@gmail.com" className="text-slate-300 hover:text-purple-500">sitecraftersz@gmail.com</a></li>
-              <li><a href="tel:250789599719" className="text-slate-300 hover:text-purple-500">(+250) 789-599-719</a></li>
-              <li  className="text-slate-300">Kigali, Rwanda</li>
+              <li><a href="tel:250789599719" className="text-slate-300 hover:text-purple-500">(+250) 789 599 719</a></li>
+              <li className="text-slate-300">Kigali, Rwanda</li>
             </ul>
           </div>
         </div>
@@ -97,12 +97,18 @@ const Footer = () => {
           <p className="text-slate-400 text-sm">
             © {currentYear} SiteCrafters. All rights reserved.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-slate-400 hover:text-purple-400 text-sm transition-colors">
-              Privacy Policy
+          <div className="mt-4 md:mt-0 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+            <a
+              href="mailto:sitecraftersz@gmail.com"
+              className="text-slate-400 hover:text-purple-400 text-sm transition-colors"
+            >
+              sitecraftersz@gmail.com
             </a>
-            <a href="#" className="text-slate-400 hover:text-purple-400 text-sm transition-colors">
-              Terms of Service
+            <a
+              href="tel:250789599719"
+              className="text-slate-400 hover:text-purple-400 text-sm transition-colors"
+            >
+              (+250) 789 599 719
             </a>
           </div>
         </div>
