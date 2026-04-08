@@ -19,6 +19,17 @@ import pharmaimage from "../assets/portfolio/pharma.png";
 import ptchatsystemimage from "../assets/portfolio/ptchatsystem.png";
 import salonimage from "../assets/portfolio/salon.png";
 import sportsacademyimage from "../assets/portfolio/sportsacademy.png";
+import serenitymassagespaimage from "../assets/portfolio/spa.png";
+import eliteinteriordesignersimage from "../assets/portfolio/intdesign.png";
+import eventplannershubimage from "../assets/portfolio/evntplanner.png";
+import auramjewelryimage from "../assets/portfolio/jewelry.png";
+import dentistsclinicimage from "../assets/portfolio/dental.png";
+import webofrestaurantimage from "../assets/portfolio/restaurant.png";
+import realestateswebimage from "../assets/portfolio/realestate.png";
+import generalcafeimage from "../assets/portfolio/cafe.png";
+import generalsupermarketimage from "../assets/portfolio/supermarket.png";
+import yogastudiosimage from "../assets/portfolio/yoga.png";
+import plumbingtechnicianimage from "../assets/portfolio/plumbing.png";
 
 // Map JSON filenames to imported images
 const imageMap: Record<string, string> = {
@@ -37,6 +48,17 @@ const imageMap: Record<string, string> = {
   "ptchatsystem.png": ptchatsystemimage,
   "salon.png": salonimage,
   "sportsacademy.png": sportsacademyimage,
+  "spa.png": serenitymassagespaimage,
+  "intdesign.png": eliteinteriordesignersimage,
+  "evntplanner.png": eventplannershubimage,
+  "jewelry.png": auramjewelryimage,
+  "dental.png": dentistsclinicimage,
+  "restaurant.png": webofrestaurantimage,
+  "realestate.png": realestateswebimage,
+  "cafe.png": generalcafeimage,
+  "supermarket.png": generalsupermarketimage,
+  "yoga.png": yogastudiosimage,
+  "plumbing.png": plumbingtechnicianimage,
 };
 
 // Map images to projects
@@ -45,11 +67,14 @@ const projects = projectsData.map((p) => ({
   image: imageMap[p.image],
 }));
 
-// Choose 3 specific projects to display
+// Choose 6 specific projects to display
 const selectedProjects = [
   projects.find(p => p.title === "Brotherhood Travel Tours")!,
   projects.find(p => p.title === "Personal Trainer Chat System")!,
-  projects.find(p => p.title === "Beauty Salon")!
+  projects.find(p => p.title === "Auram Jewelry")!,
+  projects.find(p => p.title === "Web of Restaurant")!,
+  projects.find(p => p.title === "Serenity Massage Spa")!,
+  projects.find(p => p.title === "Real Estates Web")!
 ];
 
 const Portfolio = () => {

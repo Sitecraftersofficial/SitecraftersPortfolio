@@ -19,8 +19,7 @@ const CounterCard = ({
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    let intervalId: NodeJS.Timeout;
-    let animationId: NodeJS.Timeout;
+    let animationId: ReturnType<typeof setInterval>;
 
     const startCounting = () => {
       let start = 0;

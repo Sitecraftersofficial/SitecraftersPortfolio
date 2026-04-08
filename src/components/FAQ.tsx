@@ -84,7 +84,7 @@ const FAQ = () => {
                                     id={`faq-question-${index}`}
                                     onClick={() => toggleFAQ(index)}
                                     className="w-full text-left p-6 flex items-center justify-between gap-4 hover:bg-slate-800/30 transition-colors"
-                                    aria-expanded={openIndex === index ? "true" : "false"}
+                                    aria-expanded={openIndex === index}
                                     aria-controls={`faq-answer-${index}`}
                                 >
                                     <h3 className="text-lg md:text-xl font-semibold text-white pr-4">

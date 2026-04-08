@@ -21,6 +21,17 @@ import pharmaimage from "../assets/portfolio/pharma.png";
 import ptchatsystemimage from "../assets/portfolio/ptchatsystem.png";
 import salonimage from "../assets/portfolio/salon.png";
 import sportsacademyimage from "../assets/portfolio/sportsacademy.png";
+import serenitymassagespaimage from "../assets/portfolio/spa.png";
+import eliteinteriordesignersimage from "../assets/portfolio/intdesign.png";
+import eventplannershubimage from "../assets/portfolio/evntplanner.png";
+import auramjewelryimage from "../assets/portfolio/jewelry.png";
+import dentistsclinicimage from "../assets/portfolio/dental.png";
+import webofrestaurantimage from "../assets/portfolio/restaurant.png";
+import realestateswebimage from "../assets/portfolio/realestate.png";
+import generalcafeimage from "../assets/portfolio/cafe.png";
+import generalsupermarketimage from "../assets/portfolio/supermarket.png";
+import yogastudiosimage from "../assets/portfolio/yoga.png";
+import plumbingtechnicianimage from "../assets/portfolio/plumbing.png";
 
 // Map JSON filenames to imported images
 const imageMap: Record<string, string> = {
@@ -39,6 +50,17 @@ const imageMap: Record<string, string> = {
   "ptchatsystem.png": ptchatsystemimage,
   "salon.png": salonimage,
   "sportsacademy.png": sportsacademyimage,
+  "spa.png": serenitymassagespaimage,
+  "intdesign.png": eliteinteriordesignersimage,
+  "evntplanner.png": eventplannershubimage,
+  "jewelry.png": auramjewelryimage,
+  "dental.png": dentistsclinicimage,
+  "restaurant.png": webofrestaurantimage,
+  "realestate.png": realestateswebimage,
+  "cafe.png": generalcafeimage,
+  "supermarket.png": generalsupermarketimage,
+  "yoga.png": yogastudiosimage,
+  "plumbing.png": plumbingtechnicianimage,
 };
 
 // Map images to projects
@@ -105,8 +127,8 @@ const PortfolioPage = () => {
                   key={category}
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 py-2 rounded-full transition-colors ${selectedCategory === category
-                      ? "bg-gradient-to-r from-cyan-600 to-purple-500 text-white"
-                      : "bg-slate-800/70 text-slate-300 hover:bg-slate-700"
+                    ? "bg-gradient-to-r from-cyan-600 to-purple-500 text-white"
+                    : "bg-slate-800/70 text-slate-300 hover:bg-slate-700"
                     }`}
                 >
                   {category}

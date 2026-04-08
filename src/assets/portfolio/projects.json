@@ -11,8 +11,8 @@
       "title": "Brotherhood Travel Tours",
       "description": "A vibrant travel agency website for Brotherhood Travel Tours, featuring destination highlights, tour packages, and easy booking options.",
       "image": "brohoodtraveltours.png",
-      "tags": ["React", "Typescript", "Supabase", "PLpgSQL", "Html", "Css", "Tailwindcss"],
-      "liveUrl": "https://carvv.netlify.app/",
+      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://brotherhoodunitedcompanyltd.com/",
       "category": "Websites"
     },
     {
@@ -20,15 +20,15 @@
         "description": "A sleek gym website with class scheduling, membership management, and a user-friendly admin dashboard.",
         "image": "silvagym.png",
         "tags": ["Html", "Css", "Tailwindcss", "Javascript"],
-        "liveUrl": "https://silvagym.netlify.app/",
+        "liveUrl": "https://silgym.netlify.app/",
         "category": "Websites"
     },
     {
-      "title": "HVAC Services",
-      "description": "A professional HVAC services website showcasing services, customer testimonials, and easy contact options.",
-      "image": "hvac.png",
+      "title": "Personal Trainer",
+      "description": "A sleek personal trainer website with service offerings, client testimonials, and easy booking options.",
+      "image": "personaltrainer.png",
       "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
-      "liveUrl": "https://zansemhvacservices.netlify.app/",
+      "liveUrl": "https://personaltrainersweb.netlify.app/",
       "category": "Websites"
     },
     {
@@ -61,11 +61,11 @@
       "category": "Templates"
     },
     {
-      "title": "Personal Trainer",
-      "description": "A sleek personal trainer website with service offerings, client testimonials, and easy booking options.",
-      "image": "personaltrainer.png",
+      "title": "HVAC Services",
+      "description": "A professional HVAC services website showcasing services, customer testimonials, and easy contact options.",
+      "image": "hvac.png",
       "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
-      "liveUrl": "https://personaltrainersweb.netlify.app/",
+      "liveUrl": "https://kglhvacservices.netlify.app/",
       "category": "Templates"
     },
     {
@@ -82,6 +82,94 @@
       "image": "gym.png",
       "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
       "liveUrl": "https://gymssite.netlify.app/",
+      "category": "Templates"
+    },
+    {
+      "title": "Serenity Massage Spa",
+      "description": "A calming massage spa website featuring treatment highlights, therapist profiles, and seamless appointment booking.",
+      "image": "spa.png",
+      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://serenitymassagespa.netlify.app/",
+      "category": "Templates"
+    },
+    {
+      "title": "Elite Interior Designers",
+      "description": "A premium interior design template showcasing services, project galleries, and an easy consultation contact flow.",
+      "image": "intdesign.png",
+      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://eliteinteriordesigners.netlify.app/",
+      "category": "Templates"
+    },
+    {
+      "title": "Event Planners Hub",
+      "description": "A vibrant event planning template with service packages, event showcases, and quick inquiry options.",
+      "image": "evntplanner.png",
+      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://eventplannershub.netlify.app/",
+      "category": "Templates"
+    },
+    {
+      "title": "Auram Jewelry",
+      "description": "An elegant jewelry template featuring curated collections, product storytelling, and conversion-focused call-to-actions.",
+      "image": "jewelry.png",
+      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://auramjewelry.netlify.app/",
+      "category": "Templates"
+    },
+    {
+      "title": "Dentists Clinic",
+      "description": "A professional dental clinic template with treatment overviews, doctor profiles, and appointment request sections.",
+      "image": "dental.png",
+      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://dentistsclinic.netlify.app/",
+      "category": "Templates"
+    },
+    {
+      "title": "Web of Restaurant",
+      "description": "A modern restaurant template presenting menu highlights, chef stories, and reservation-ready contact details.",
+      "image": "restaurant.png",
+      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://webofrestaurant.netlify.app/",
+      "category": "Templates"
+    },
+    {
+      "title": "Real Estates Web",
+      "description": "A clean real estate template built to showcase listings, featured properties, and client inquiry forms.",
+      "image": "realestate.png",
+      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://realestatesweb.netlify.app/",
+      "category": "Templates"
+    },
+    {
+      "title": "General Cafe",
+      "description": "A warm cafe template with featured drinks, ambience sections, and simple contact and location details.",
+      "image": "cafe.png",
+      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://generalcafe.netlify.app/",
+      "category": "Templates"
+    },
+    {
+      "title": "General Supermarket",
+      "description": "A practical supermarket template highlighting product categories, weekly offers, and clear shopping call-to-actions.",
+      "image": "supermarket.png",
+      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://generalsupermarket.netlify.app/",
+      "category": "Templates"
+    },
+    {
+      "title": "Yoga Studios",
+      "description": "A calming yoga studio template featuring class schedules, instructor profiles, and membership sign-up prompts.",
+      "image": "yoga.png",
+      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://yogastudios.netlify.app/",
+      "category": "Templates"
+    },
+    {
+      "title": "Plumbing Technician",
+      "description": "A service-focused plumbing template showcasing core services, emergency support details, and quote request forms.",
+      "image": "plumbing.png",
+      "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
+      "liveUrl": "https://plumbingtechnician.netlify.app/",
       "category": "Templates"
     },
 
@@ -122,11 +210,11 @@
       "category": "Landing Pages"
     },
     {
-      "title": "Sports Academy",
+      "title": "Elite Sports Academy",
       "description": "A dynamic sports academy website featuring training programs, coach profiles, and enrollment options.",
       "image": "sportsacademy.png",
       "tags": ["React", "Typescript", "Html", "Css", "Tailwindcss"],
-      "liveUrl": "https://kesa.netlify.app/",
+      "liveUrl": "https://genericsportsacademy.netlify.app/",
       "category": "Landing Pages"
     }
 ]
