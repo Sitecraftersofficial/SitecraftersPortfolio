@@ -70,11 +70,8 @@ const projects = projectsData.map((p) => ({
 // Choose 6 specific projects to display
 const selectedProjects = [
   projects.find(p => p.title === "Brotherhood Travel Tours")!,
-  projects.find(p => p.title === "Personal Trainer Chat System")!,
+  projects.find(p => p.title === "Personal Trainer")!,
   projects.find(p => p.title === "Auram Jewelry")!,
-  projects.find(p => p.title === "Web of Restaurant")!,
-  projects.find(p => p.title === "Serenity Massage Spa")!,
-  projects.find(p => p.title === "Real Estates Web")!
 ];
 
 const Portfolio = () => {
